@@ -1,0 +1,402 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head">
+           <script type="text/javascript">
+               //<![CDATA[
+               function skinChart() {
+                   this.cfg.shadow = false;
+                   this.cfg.title = '';
+                   this.cfg.seriesColors = ['#FFC107', '#03A9F4'];
+                   this.cfg.grid = {
+                       background: '#ffffff',
+                       borderColor: '#ffffff',
+                       gridLineColor: '#EEEEEE',
+                       shadow: false
+                   };
+                   this.cfg.axesDefaults = {
+                       rendererOptions: {
+                           textColor: '#212121'
+                       }
+                   };
+                   this.cfg.seriesDefaults = {
+                       shadow: false,
+                       lineWidth: 1,
+                       markerOptions: {
+                           shadow: false,
+                           size: 7,
+                           style: 'circle'
+                       }
+                   }
+               }
+               //]]>  
+           </script>
+           <style type="text/css">
+               .main-content {
+                   padding: 0;
+               }
+           </style>
+       </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g dashboard">
+            <div class="ui-g-12 ui-md-4">
+                <div class="card overview">
+                    <div class="overview-content clearfix">
+                        <span class="overview-title">成交金额</span>
+                        <span class="overview-badge">+%90</span>
+                        <span class="overview-detail">￥112,681万/周</span>
+                    </div>
+                    <div class="overview-footer">
+                        <p:graphicImage name="images/dashboard/sales.svg" library="ultima-layout" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="card overview">
+                    <div class="overview-content clearfix">
+                        <span class="overview-title">撮合笔数</span>
+                        <span class="overview-badge">+%60</span>
+                        <span class="overview-detail">6,520/日</span>
+                    </div>
+                    <div class="overview-footer">
+                        <p:graphicImage name="images/dashboard/views.svg" library="ultima-layout" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="card overview">
+                    <div class="overview-content clearfix">
+                        <span class="overview-title">成交笔数</span>
+                        <span class="overview-badge">+%45</span>
+                        <span class="overview-detail">1,200/日</span>
+                    </div>
+                    <div class="overview-footer">
+                        <p:graphicImage name="images/dashboard/progress.svg" library="ultima-layout" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ui-g-12 ui-md-6 ui-lg-3">
+                <div class="ui-g card colorbox colorbox-1">
+                    <div class="ui-g-4">
+                        <i class="material-icons">&#xE86C;</i>
+                    </div>
+                    <div class="ui-g-8">
+                        <span class="colorbox-name">新提交申请</span>
+                        <span class="colorbox-count">50</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3">
+                <div class="ui-g card colorbox colorbox-2">
+                    <div class="ui-g-4">
+                        <i class="material-icons">&#xE8C9;</i>
+                    </div>
+                    <div class="ui-g-8">
+                        <span class="colorbox-name">待处理队列</span>
+                        <span class="colorbox-count">1200</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3">
+                <div class="ui-g card colorbox colorbox-3">
+                    <div class="ui-g-4">
+                        <i class="material-icons">&#xE160;</i>
+                    </div>
+                    <div class="ui-g-8">
+                        <span class="colorbox-name">待确认</span>
+                        <span class="colorbox-count">22</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3">
+                <div class="ui-g card colorbox colorbox-4">
+                    <div class="ui-g-4">
+                        <i class="material-icons">&#xE0BE;</i>
+                    </div>
+                    <div class="ui-g-8">
+                        <span class="colorbox-name">已归档</span>
+                        <span class="colorbox-count">10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ui-g-12 ui-md-6 ui-lg-4 task-list">
+                <p:panel header="业务类别">
+                    <ul>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别一</span>
+                            <i class="material-icons">&#xE8C9;</i>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别一</span>
+                            <i class="material-icons">&#xE8A1;</i>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别一</span>
+                            <i class="material-icons">&#xE561;</i>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别一</span>
+                            <i class="material-icons">&#xE7FB;</i>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别一</span>
+                            <i class="material-icons">&#xE3AE;</i>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">交易类别二</span>
+                            <i class="material-icons">&#xE01B;</i>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 ui-fluid contact-form">
+                <p:panel header="即时申请">
+                    <div class="ui-g">
+                        <div class="ui-g-12">
+                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" autoWidth="false">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="类别1" itemValue="类别1" />
+                                <f:selectItem itemLabel="类别2" itemValue="类别2" />
+                                <f:selectItem itemLabel="类别3" itemValue="类别3" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="ui-g-12">
+                            <h:panelGroup styleClass="md-inputfield">
+                                <p:inputText />
+                                <label>子类别</label>
+                            </h:panelGroup>
+                        </div>
+                        <div class="ui-g-12">
+                            <h:panelGroup styleClass="md-inputfield">
+                                <p:inputText />
+                                <label>金额</label>
+                            </h:panelGroup>
+                        </div>
+                        <div class="ui-g-12">
+                            <h:panelGroup styleClass="md-inputfield">
+                                <p:inputText />
+                                <label>附言</label>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+                    <p:commandButton type="button" value="提交" icon="ui-icon-send"></p:commandButton>
+                </p:panel>
+            </div>
+            <div class="ui-g-12 ui-lg-4 contacts">
+                <p:panel header="最近关注">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <p:graphicImage name="images/avatar1.png" library="ultima-layout" width="45"/>
+                                <span class="name">王浩磊</span>
+                                <span class="email">wanghaolei@haier.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p:graphicImage name="images/avatar2.png" library="ultima-layout" width="45"/>
+                                <span class="name">王浩磊2</span>
+                                <span class="email">wanghaolei@haier.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p:graphicImage name="images/avatar3.png" library="ultima-layout" width="45"/>
+                                <span class="name">王浩磊3</span>
+                                <span class="email">wanghaolei@haier.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p:graphicImage name="images/avatar4.png" library="ultima-layout" width="45"/>
+                                <span class="name">王浩磊4</span>
+                                <span class="email">wanghaolei@haier.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+            
+            <div class="ui-g-12 ui-md-4">
+                <div class="card timeline ui-fluid">
+                    <div class="ui-g">
+                        <div class="ui-g-3">
+                            <span class="event-time">今日成交</span>
+                            <i class="material-icons" style="color:#009688">&#xE1BC;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner" style="color:#009688">海尔洗衣机</span>
+                            <span class="event-text">金额2000万</span>
+                            <div class="event-content">
+                                <p:graphicImage name="images/dashboard/md.png" library="ultima-layout"/>
+                            </div>
+                        </div>
+                        
+                        <div class="ui-g-3">
+                            <span class="event-time">本周累计</span>
+                            <i class="material-icons" style="color:#E91E63">&#xE885;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner" style="color:#E91E63">重点企业</span>
+                            <span class="event-text">海尔冰箱，海尔洗衣机，青岛海信</span>
+                        </div>
+                        
+                        <div class="ui-g-3">
+                            <span class="event-time">本月累计</span>
+                            <i class="material-icons" style="color:#9c27b0">&#xE0C9;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner" style="color:#9c27b0">成交量</span>
+                            <span class="event-text">某类别：10000</span>
+                        </div>
+                        
+                        <div class="ui-g-3">
+                            <span class="event-time">介绍</span>
+                            <i class="material-icons" style="color:#ff9800">&#xE0C8;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner" style="color:#ff9800">业务模式</span>
+                            <span class="event-text">在供应链金融模式下，银行向所有成员的企业进行融资安排，通过中小企业与核心企业的资信捆绑来提供授信。</span>
+                            <div class="event-content">
+                                <p:graphicImage name="images/dashboard/map.png" library="ultima-layout" />
+                            </div>
+                        </div>
+                        
+                        <div class="ui-g-3">
+                            <span class="event-time">介绍</span>
+                            <i class="material-icons" style="color:#607d8b">&#xE91B;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner">新模式</span>
+                            <span class="event-text">巴塞尔资本协议有关规定，贸易融资项下风险权重仅为一般信贷业务的20%。</span>
+                        </div>
+                        
+                        <div class="ui-g-3">
+                            <span class="event-time">介绍</span>
+                            <i class="material-icons" style="color:#FFC107">&#xE23A;</i>
+                        </div>
+                        <div class="ui-g-9">
+                            <span class="event-owner" style="color:#FFC107">Walter White</span>
+                            <span class="event-text">随着互联网+的发展，我国供应链金融市场规模逐年增长，2015年预计达到11.97万亿美元，而到2020年，有望达到14.98万亿美元。</span>
+                        </div>
+                        
+                        <div class="ui-g-12">
+                            <p:commandButton type="button" value="刷新" icon="ui-icon-refresh" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ui-g-12 ui-md-8">
+                <h:form>
+                    <div class="card">
+                        <p:dataTable var="car" value="#{dtBasicView.cars}" selectionMode="single" rowKey="#{car.id}" reflow="true" style="margin-bottom:20px">
+                            <f:facet name="header">成交统计</f:facet>
+                            <p:column headerText="Id" sortBy="#{car.id}">
+                                <h:outputText value="#{car.id}" />
+                            </p:column>
+
+                            <p:column headerText="Year" sortBy="#{car.year}">
+                                <h:outputText value="#{car.year}" />
+                            </p:column>
+
+                            <p:column headerText="Brand" sortBy="#{car.brand}">
+                                <h:outputText value="#{car.brand}" />
+                            </p:column>
+                            
+                            <p:column headerText="Color" sortBy="#{car.color}">
+                                <h:outputText value="#{car.color}" />
+                            </p:column>
+                        </p:dataTable>   
+                        
+                        <p:panel header="撮合统计">
+                            <p:chart type="line" model="#{chartDemoView.lineModel1}" responsive="true"/>
+                        </p:panel>
+                    </div>
+                </h:form>
+            </div>
+            
+     <!--       <div class="ui-g-12 ui-md-8">
+                <p:panel header="Calendar" style="height:100%">
+                    <p:schedule value="#{scheduleView.eventModel}"/>
+                </p:panel>
+            </div>
+     -->
+            <div class="ui-g-12 ui-md-12">
+                <p:panel header="实时交易情况" style="height:100%">
+                    <div class="activity-header">
+                        <div class="ui-g">
+                            <div class="ui-g-6">
+                                <span style="font-weight:bold">上次统计数据</span>
+                                <p>更新于1分钟前</p>
+                            </div>
+                            <div class="ui-g-6" style="text-align:right">
+                                <p:commandButton type="button" icon="ui-icon-update" />
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="activity-list">
+                        <li>
+                            <div class="count">5900</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">新上线</div>
+                                <div class="ui-g-6">95%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count" style="background-color:#ffc107">3250</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">新申请</div>
+                                <div class="ui-g-6">24%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count" style="background-color:#673AB7">1125</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">发票数量</div>
+                                <div class="ui-g-6">55%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count" style="background-color:#00bcd4">50</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">费用</div>
+                                <div class="ui-g-6">15%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count" style="background-color:#607D8B">350</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">成交笔数</div>
+                                <div class="ui-g-6">5%</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count" style="background-color:#FF5722">500</div>
+                            <div class="ui-g">
+                                <div class="ui-g-6">待处理</div>
+                                <div class="ui-g-6">25%</div>
+                            </div>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

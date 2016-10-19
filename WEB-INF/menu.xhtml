@@ -1,0 +1,86 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pu="http://primefaces.org/ultima">
+
+    <h:form id="menuform">
+        <div class="layout-menu #{guestPreferences.menuClass}">
+            <div class="nano">
+                <div class="nano-content menu-scroll-content">
+                    <ui:fragment
+                            rendered="#{guestPreferences.profileMode == 'inline' and guestPreferences.menuLayout != 'menu-layout-static menu-layout-horizontal'}">
+                        <div class="profile">
+                            <div class="profile-image"></div>
+                            <a id="profile-options" href="#">
+                                <span class="profile-name">王浩磊</span>
+                                <i class="material-icons">&#xE313;</i>
+                            </a>
+                        </div>
+
+                        <ul id="profile-menu" class="ultima-menu">
+                            <li role="menuitem">
+                                <a href="#" class="ripplelink">
+                                    <i class="material-icons">&#xE7FD;</i>
+                                    <span>个人资料</span>
+                                </a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" class="ripplelink">
+                                    <i class="material-icons">&#xE32A;</i>
+                                    <span>隐私设置</span>
+                                </a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" class="ripplelink">
+                                    <i class="material-icons">&#xE8B9;</i>
+                                    <span>个性配置</span>
+                                </a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="#" class="ripplelink">
+                                    <i class="material-icons">&#xE8AC;</i>
+                                    <span>退出系统</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </ui:fragment>
+
+                    <pu:menu widgetVar="me">
+                        <p:menuitem id="um_dashboard" value="工作台" icon="&#xE871;" outcome="/dashboard"/>
+                        <p:submenu id="um_components" label="发票管理" icon="&#xE896;">
+                            <p:menuitem id="um_sample" value="企业发票信息上传" icon="&#xE30B;" outcome="/app1"/>
+                            <p:menuitem id="um_forms" value="上传信息核对报表" icon="&#xE890;" outcome="/app1"/>
+                            <p:menuitem id="um_data" value="发票校验" icon="&#xE3EC;" outcome="/app1"/>
+                            <p:menuitem id="um_panels" value="报表管理" icon="&#xE14F;" outcome="/app1"/>
+                            <p:menuitem id="um_overlays" value="客户信息维护" icon="&#xE14D;" outcome="/app1"/>
+                        </p:submenu>
+                        <p:submenu id="um_applyforfinance" label="融资申请" icon="&#xE884;">
+                            <p:menuitem id="um_db_landing1" value="融资申请方式一" icon="&#xE904;" outcome="/app1"/>
+                            <p:menuitem id="um_empty1" value="融资申请方式二" icon="&#xE88B;" outcome="/app1"/>
+                            <p:menuitem id="um_login1" value="融资申请方式三" icon="&#xE8E8;" outcome="/app1"/>
+                        </p:submenu>
+                        <p:submenu id="um_infochk" label="信息审查" icon="fa fa-check">
+                            <p:menuitem id="um_infochk1" value="信息审查处理" icon="&#xE896;" outcome="/app1"/>
+                            <p:menuitem id="um_infochk2" value="信息审查上报" icon="&#xE904;" outcome="/app1"/>
+                        </p:submenu>
+                        <p:submenu id="um_default" label="融资申请审核" icon="&#xE8E8;">
+                            <p:menuitem id="um_db_landing" value="融资申请资料查询" icon="&#xE904;" outcome="/landing"/>
+                            <p:menuitem id="um_empty" value="融资申请资料审查" icon="&#xE88B;" outcome="/empty"/>
+                            <p:menuitem id="um_login" value="融资申请资料归档" icon="&#xE8E8;" outcome="/login"/>
+                        </p:submenu>
+                        <p:submenu id="um_system" label="系统管理" icon="&#xE5D2;">
+                            <p:menuitem id="um_system1" value="企业用户管理" icon="&#xE896;" outcome="/app1"/>
+                            <p:menuitem id="um_system2" value="个人用户管理" icon="&#xE896;" outcome="/app1"/>
+                            <p:menuitem id="um_system3" value="菜单管理" icon="&#xE896;" outcome="/app1"/>
+                        </p:submenu>
+                        <p:menuitem id="um_utils" value="实用工具" icon="&#xE869;" outcome="/landing"/>
+                        <p:menuitem id="um_doc" value="帮助" icon="&#xE880;" outcome="/landing"/>
+                    </pu:menu>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

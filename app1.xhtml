@@ -1,0 +1,98 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Sample</ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <div class="ui-fluid">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <div class="card card-w-title">
+                            <h1>表单域</h1>
+                            <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid" styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+                                <p:outputLabel for="input" value="企业名称"/>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText id="input"/>
+                                    <label>企业名称</label>
+                                </h:panelGroup>
+                                <p:outputLabel for="input2" value="企业编号"/>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText id="input2"/>
+                                    <label>企业编号</label>
+                                </h:panelGroup>
+
+                                <p:outputLabel for="onemenu" value="票据类别"/>
+                                <p:selectOneMenu id="onemenu">
+                                    <f:selectItem itemLabel="" itemValue="" />
+                                    <f:selectItem itemLabel="银票" itemValue="银票" />
+                                    <f:selectItem itemLabel="商票" itemValue="商票" />
+                                    <f:selectItem itemLabel="商票" itemValue="商票" />
+                                </p:selectOneMenu>
+
+                                <p:outputLabel for="chkbox" value="业务种类"/>
+                                <p:selectManyCheckbox id="chkbox" value="#{checkboxView.selectedCities}" layout="responsive" columns="2" styleClass="form-group">
+                                    <f:selectItems value="#{checkboxView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
+                                </p:selectManyCheckbox>
+
+                                <!--<p:outputLabel for="btn" value="" />-->
+                                <p:commandButton id="btn" value="提交" icon="ui-icon-edit" type="button"/>
+
+                            </p:panelGrid>
+
+                            <p:dialog header="Login" widgetVar="dlg" resizable="false" draggable="false" responsive="true" hideEffect="scale">
+                                <div class="ui-g form-group" style="margin-bottom: 16px;">
+                                    <div class="ui-g-12">
+                                        <h:panelGroup styleClass="md-inputfield">
+                                            <p:inputText />
+                                            <label>Name</label>
+                                        </h:panelGroup>
+                                    </div>
+                                    <div class="ui-g-12">
+                                        <h:panelGroup styleClass="md-inputfield">
+                                            <p:password />
+                                            <label>Password</label>
+                                        </h:panelGroup>
+                                    </div>
+                                </div>
+                                
+                                <f:facet name="footer">
+                                    <p:commandButton value="Login" type="button" onclick="PF('dlg').hide()" style="width:auto" icon="ui-icon-person"/>
+                                </f:facet>  
+                            </p:dialog>
+                        </div>
+                        
+                        <div class="card card-w-title">
+                            <h1>票据</h1>
+                            <p:dataTable var="car" value="#{dtBasicView.cars}" reflow="true" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">
+                                <f:facet name="header">
+                                    明细数据
+                                </f:facet>
+                                <p:column headerText="Id" sortBy="#{car.id}">
+                                    <h:outputText value="#{car.id}" />
+                                </p:column>
+
+                                <p:column headerText="Year" sortBy="#{car.year}">
+                                    <h:outputText value="#{car.year}" />
+                                </p:column>
+
+                                <p:column headerText="Brand" sortBy="#{car.brand}">
+                                    <h:outputText value="#{car.brand}" />
+                                </p:column>
+
+                                <p:column headerText="Color" sortBy="#{car.color}">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+                            </p:dataTable>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

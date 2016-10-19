@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>云鸽平台</title>
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <script type="text/javascript">
+        $(function() {
+            $('#menu-button').on('click', function(e) {
+                var menu = $('#menu');
+                if(menu.hasClass('lmenu-active')) {
+                    menu.addClass('fadeOutUp');
+                    
+                    setTimeout(function() {
+                        menu.removeClass('fadeOutUp fadeInDown lmenu-active');
+                    },500);
+                }
+                else {
+                    menu.addClass('lmenu-active fadeInDown');
+                }
+                e.preventDefault();
+            });
+        });
+        </script>
+
+        <style type="text/css">
+
+/*
+            body {
+                !*font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";*!
+                !*font-family: 'Hiragino Sans GB', Helvetica, Arial, 'Microsoft Yahei';*!
+                font-family: "Microsoft Yahei UI","Microsoft Yahei",Verdana,Simsun,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+            }
+*/
+
+
+            .landing-body{
+                font-family: "Microsoft Yahei UI","Microsoft Yahei",Verdana,Simsun,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+            }
+
+        </style>
+
+    </h:head>
+
+    <h:body styleClass="landing-body">
+        <div class="landing-wrapper">
+            <div id="header">
+                <div class="header-top clearfix">
+                    <span class="logo"></span>
+                    
+                    <a id="menu-button" href="#">
+                       <span class="fa fa-bars"></span>
+                    </a>
+                    <ul id="menu" class="animated">
+                       <li><a href="#"><i class="ui-icon ui-icon-home"></i><span>主页</span></a></li>
+                       <li><a href="#introduction"><i class="ui-icon ui-icon-open-in-browser"></i><span>业务介绍</span></a></li>
+                       <li><a href="#features"><i class="ui-icon ui-icon-list"></i><span>平台功能</span></a></li>
+                       <li><a href="#promotion"><i class="ui-icon ui-icon-group-work"></i><span>平台入口</span></a></li>
+                       <li><a href="#pricing"><i class="ui-icon ui-icon-attach-money"></i><span>关于我们</span></a></li>
+                       <li><a href="#video"><i class="ui-icon ui-icon-videocam"></i><span>联系我们</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="header-content clearfix" style="height: 380px">
+                    <h1>理念、愿景、供应链金融 供应链金融供应链金融</h1>
+                    <h2> </h2>
+                    <p:button outcome="/login4corp" value="企业用户登录" styleClass="secondary"/>
+                    <p:button outcome="/login" value="个人用户登录" styleClass="secondary"/>
+                </div>
+            </div>
+            
+            <div id="features">
+                <h2>供应链金融很好的实现了“物流”、“商流”、“资金流”、“信息流”等多流合一。 </h2>
+                <p>目前，商业银行在进行经营战略转型过程中，已纷纷将供应链金融作为转型的着力点和突破口之一。</p>
+                <p>供应链管理已成为企业的生存支柱与利润源泉，几乎所有的企业管理者都认识到供应链管理对于企业战略举足轻重的作用。</p>
+
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4">
+                        <h3>易融资</h3>
+                        <p>即时放款 T+0到账 融资过程全部线上操作</p>
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE150;</i>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <h3>有保障</h3>
+                        <p>基于真实贸易背景</p>
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE32C;</i>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <h3>低成本</h3>
+                        <p>利率更低，费用更低，无抵押</p>
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE89D;</i>
+                        </div>
+                    </div>
+                    
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE259;</i>
+                        </div>
+                        <h3>有保障</h3>
+                        <p>基于真实贸易背景</p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE40A;</i>
+                        </div>
+                        <h3>有保障</h3>
+                        <p>基于真实贸易背景</p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE86C;</i>
+                        </div>
+                        <h3>有保障</h3>
+                        <p>基于真实贸易背景</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="promotion" class="clearfix">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-lg-8">
+                        <h1>开始您的业务</h1>
+                        <p:button outcome="/dashboard" value="用户注册" styleClass="secondary"/>
+                    </div>
+                    <div class="ui-g-12 ui-lg-4">
+                        <div class="card">
+                            <h3>可流转</h3>
+                            <p>中小企业从下游企业接收到云信，将持有的云信转让给上游供应商，结转应付账款，即云信的流转。因云信流转基于线上，流转过程方便、快捷，不占用企业银行授信，不再占用保证金，云信流转不发生任何费用。</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>可融资</h3>
+                            <p>基于真实贸易背景，中小企业将下游企业的应收账款向金融机构或商业保理企业进行保理，在提供供货合同、发票、发货单等基础信息后， 以其持有的云信作为保理融资还款保证，完成融资。</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>可灵活配置</h3>
+                            <p>中小企业可根据业务发展需求，按需结算及融资；在云信到期日前，企业可灵活安排结算金额和期限。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pricing">
+                <h2>关于我们</h2>
+                <p>云鸽金融平台旨在充分发挥大型国企在产业链中的核心作用，全方位服务于产业链上每一个经济体，建立和谐、健康、良性的产业生态圈。平台依托众多大型企业的资源优势，秉承不断开拓进取的创新理念，实现传统产业与互联网、与金融的相互融合，在健全的风控体系基础上为众多产业领域中的企业提供可信赖、最便捷、最专业的金融信息服务。</p>
+            
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4 pricing-box pricing-basic">
+                        <div class="card">
+                            <div class="pricing-header">
+                                <span class="name">开放</span>
+                                <span class="fee">合作</span>
+                                <span class="type">共赢</span>
+                            </div>
+                            <div class="pricing-content">
+                                <ul>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4 pricing-box pricing-standard">
+                        <div class="card">
+                            <div class="pricing-header">
+                                <span class="name">专业</span>
+                                <span class="fee">专注</span>
+                                <span class="type">专心</span>
+                            </div>
+                            <div class="pricing-content">
+                                <ul>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-4 pricing-box pricing-professional">
+                        <div class="card">
+                            <div class="pricing-header">
+                                <span class="name">合规</span>
+                                <span class="fee">突破</span>
+                                <span class="type">未来</span>
+                            </div>
+                            <div class="pricing-content">
+                                <ul>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                    <li><i class="material-icons"></i><span>优势1</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video">
+               <div class="video-content">
+                   <h2>联系我们</h2>
+                   <p>诚邀有志于从事供应链金融事业的各专业人士加盟，有意者请将简历发送至...</p>
+                   <div class="video-container">
+                       <!--<iframe src="https://www.youtube.com/embed/B_lYGUtCd0g" frameborder="0" width="560" height="330"></iframe>-->
+                   </div>
+               </div>
+           </div>
+           
+           <div class="footer">
+               <div class="footer-content">
+                   <div class="ui-g">
+                        <div class="ui-g-12 ui-md-6">
+                            <p>云鸽供应链金融平台</p>
+                        </div>
+                        <div class="ui-g-12 ui-md-6">
+                            <ul>
+                                <li><a href="#mobile">起步</a></li>
+                                <li><a href="#pricing">关于我们</a></li>
+                                <li><a href="#video">联系我们</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">主页</a></li>
+                                <li><a href="#introduction">业务说明</a></li>
+                                <li><a href="#features">功能介绍</a></li>
+                            </ul>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+        
+        <h:outputStylesheet name="css/animate.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="ultima-layout" />
+    </h:body>
+
+</html>
