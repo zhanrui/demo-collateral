@@ -4,6 +4,8 @@ package com.rs.admin.repository.model;
  * 商业用房
  */
 public class BusinessBuilding {
+    private String pkid;                    // 编号
+    private String assetType;               // 押品资产类别
     private String title;                   // 题目
     private String houseProperty;           // 房产属性
     private String houseCertNo;             // 房产证号

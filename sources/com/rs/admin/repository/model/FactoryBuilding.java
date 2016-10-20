@@ -4,6 +4,8 @@ package com.rs.admin.repository.model;
  * 厂房
  */
 public class FactoryBuilding {
+    private String pkid;                    // 编号
+    private String assetType;               // 押品资产类别
     private String title;                   // 题目
     private String workshopProperty;        // 厂房性质
     private String location;                // 区域位置

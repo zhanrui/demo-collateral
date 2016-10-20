@@ -4,6 +4,8 @@ package com.rs.admin.repository.model;
  * 土地
  */
 public class Land {
+    private String pkid;               // 编号
+    private String assetType;          // 押品资产类别
     private String title;              // 题目
     private String landType;           // 土地类型
     private String location;           // 区域位置
@@ -147,5 +149,21 @@ public class Land {
 
     public void setIsRecommend(String isRecommend) {
         this.isRecommend = isRecommend;
+    }
+
+    public String getPkid() {
+        return pkid;
+    }
+
+    public void setPkid(String pkid) {
+        this.pkid = pkid;
+    }
+
+    public String getAssetType() {
+        return assetType;
+    }
+
+    public void setAssetType(String assetType) {
+        this.assetType = assetType;
     }
 }

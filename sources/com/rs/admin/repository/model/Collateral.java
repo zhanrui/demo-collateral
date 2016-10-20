@@ -1,7 +1,7 @@
 package com.rs.admin.repository.model;
 
 /**
- * Created by baiqg on 2016/10/20.
+ * 押品信息
  */
 public class Collateral {
     private String pkid;                       // 编号
@@ -11,9 +11,8 @@ public class Collateral {
     private String mail;                       // 邮箱
     private String dealType;                   // 押品可处置属性
     private String assetType;                  // 押品资产类别
-    private Land land;                         // 土地
-    private FactoryBuilding factoryBuilding;   // 厂房
-    private BusinessBuilding businessBuilding; // 商业用房
+    private String assetPkid;                  // 押品ID
+    private String descTag;                    // 押品描述 标签
 
     public String getPkid() {
         return pkid;
@@ -71,27 +70,19 @@ public class Collateral {
         this.assetType = assetType;
     }
 
-    public Land getLand() {
-        return land;
+    public String getAssetPkid() {
+        return assetPkid;
     }
 
-    public void setLand(Land land) {
-        this.land = land;
+    public void setAssetPkid(String assetPkid) {
+        this.assetPkid = assetPkid;
     }
 
-    public FactoryBuilding getFactoryBuilding() {
-        return factoryBuilding;
+    public String getDescTag() {
+        return descTag;
     }
 
-    public void setFactoryBuilding(FactoryBuilding factoryBuilding) {
-        this.factoryBuilding = factoryBuilding;
-    }
-
-    public BusinessBuilding getBusinessBuilding() {
-        return businessBuilding;
-    }
-
-    public void setBusinessBuilding(BusinessBuilding businessBuilding) {
-        this.businessBuilding = businessBuilding;
+    public void setDescTag(String descTag) {
+        this.descTag = descTag;
     }
 }
