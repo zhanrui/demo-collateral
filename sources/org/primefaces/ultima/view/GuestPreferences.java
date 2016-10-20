@@ -38,7 +38,9 @@ public class GuestPreferences implements Serializable {
     
     private String menuLayout = "static";
     
-    private boolean compact = true;
+    private boolean compact = false;
+
+    private int userType = 0;  //0:公众用户  1：后台用户
     
     @PostConstruct
     public void init() {
@@ -53,7 +55,8 @@ public class GuestPreferences implements Serializable {
         themeColors.put("purple-cyan", "#673AB7");
         themeColors.put("teal", "#009688");
     }
-    
+
+
     public String getMenuClass() {
         return this.menuClass;
     }
@@ -107,5 +110,20 @@ public class GuestPreferences implements Serializable {
     
     public boolean isCompact() {
         return this.compact;
+    }
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
+        if (this.userType == 0) {//personal user
+            setTheme("teal");
+            setMenuLayout("horizontal");
+        } else  {
+            setTheme("indigo");
+            setMenuLayout("static");
+        }
     }
 }

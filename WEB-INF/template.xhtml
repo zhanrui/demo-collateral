@@ -21,7 +21,8 @@
         <ui:insert name="head"/>
     </h:head>
 
-    <h:body styleClass="main-body #{guestPreferences.compact ? 'layout-compact' : null}">
+    <h:body styleClass="main-body #{guestPreferences.compact ? 'layout-compact' : null}"
+            style='font-family: "Microsoft Yahei UI","Microsoft Yahei", Roboto, "Helvetica Neue", sans-serif;'>
         
         <div class="layout-wrapper #{guestPreferences.menuLayout}">
             <ui:include src="./topbar.xhtml" />
