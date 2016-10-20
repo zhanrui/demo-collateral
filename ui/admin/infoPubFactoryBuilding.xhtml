@@ -1,0 +1,129 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>厂房</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="factory_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_radio1" value="厂房性质"/>
+        <p:selectOneRadio id="factory_radio1" columns="2">
+            <f:selectItem itemLabel="标准用房" itemValue="1"/>
+            <f:selectItem itemLabel="非标准用房" itemValue="0"/>
+        </p:selectOneRadio>
+        <p:outputLabel for="factory_pg1" value="区域位置"/>
+        <p:panelGrid id="factory_pg1" columns="4">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="山东省" itemValue=""/>
+                <f:selectItem itemLabel="安徽省" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="青岛市" itemValue=""/>
+                <f:selectItem itemLabel="济南市" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="市南区" itemValue=""/>
+                <f:selectItem itemLabel="市北区" itemValue="1"/>
+                <f:selectItem itemLabel="李沧区" itemValue="1"/>
+                <f:selectItem itemLabel="崂山区" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="factory_input2" value="已使用年限"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input2"/>
+            <label>已使用年限</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input3" value="土地使用权总面积"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input3"/>
+            <label>土地使用权总面积</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input4" value="总建筑面积"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input4"/>
+            <label>总建筑面积</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input5" value="确权建筑面积"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input5"/>
+            <label>确权建筑面积</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input6" value="未确权建筑面积"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input6"/>
+            <label>未确权建筑面积</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input7" value="目前使用情况"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input7"/>
+            <label>目前使用情况</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_pg2" value="是否租赁"/>
+        <p:panelGrid id="factory_pg2">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="factory_pg3" value="是否查封"/>
+        <p:panelGrid id="factory_pg3">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="factory_pg4" value="是否抵押"/>
+        <p:panelGrid id="factory_pg4">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="factory_input9" value="大致用途"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input9"/>
+            <label>大致用途</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input10" value="购买人条件"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input10"/>
+            <label>购买人条件</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_input11" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="factory_input11"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_file1" value="上传图片"/>
+        <p:fileUpload id="factory_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced"
+                      dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                      style="width:100%"/>
+
+        <p:outputLabel for="factory_input12" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="factory_input12"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="factory_radio3" value="是否重点推荐"/>
+        <p:selectOneRadio id="factory_radio3" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1"/>
+            <f:selectItem itemLabel="否" itemValue="0"/>
+        </p:selectOneRadio>
+
+        <!--<p:outputLabel for="btn" value="" />-->
+        <p:commandButton id="factory_btn" value="提交" icon="ui-icon-edit" type="button"/>
+
+    </p:panelGrid>
+
+</ui:composition>

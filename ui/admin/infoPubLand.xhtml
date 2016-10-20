@@ -1,0 +1,121 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>土地</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="land_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_menu1" value="土地类型"/>
+        <p:selectOneMenu id="land_menu1">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="工业用地" itemValue="1"/>
+            <f:selectItem itemLabel="商业用地" itemValue="2"/>
+            <f:selectItem itemLabel="农业用地" itemValue="3"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="land_pg1" value="区域位置"/>
+        <p:panelGrid id="land_pg1" columns="4">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="山东省" itemValue=""/>
+                <f:selectItem itemLabel="安徽省" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="青岛市" itemValue=""/>
+                <f:selectItem itemLabel="济南市" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="市南区" itemValue=""/>
+                <f:selectItem itemLabel="市北区" itemValue="1"/>
+                <f:selectItem itemLabel="李沧区" itemValue="1"/>
+                <f:selectItem itemLabel="崂山区" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="land_input2" value="土地证书编号"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input2"/>
+            <label>土地证书编号</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input3" value="剩余使用年限"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input3"/>
+            <label>剩余使用年限</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input4" value="土地使用权面积"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input4"/>
+            <label>土地使用权面积</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input5" value="容积率"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input5"/>
+            <label>容积率</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input6" value="绿地率"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input6"/>
+            <label>绿地率</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input7" value="建筑密度"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input7"/>
+            <label>建筑密度</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input8" value="地上住户、占用情况"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input8"/>
+            <label>地上住户、占用情况</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_pg2" value="是否查封"/>
+        <p:panelGrid id="land_pg2">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1" />
+                <f:selectItem itemLabel="否" itemValue="0" />
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="land_pg3" value="是否抵押"/>
+        <p:panelGrid id="land_pg3">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1" />
+                <f:selectItem itemLabel="否" itemValue="0" />
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="land_input9" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input9"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_input10" value="购买人条件"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="land_input10"/>
+            <label>购买人条件</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_file1" value="上传图片"/>
+        <p:fileUpload id="land_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" style="width:100%" />
+
+        <p:outputLabel for="land_input11" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="land_input11"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="land_radio3" value="是否重点推荐"/>
+        <p:selectOneRadio id="land_radio3" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1" />
+            <f:selectItem itemLabel="否" itemValue="0" />
+        </p:selectOneRadio>
+
+        <!--<p:outputLabel for="btn" value="" />-->
+        <p:commandButton id="land_btn" value="提交" icon="ui-icon-edit" type="button"/>
+
+    </p:panelGrid>
+
+</ui:composition>
