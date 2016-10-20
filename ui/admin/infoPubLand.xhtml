@@ -9,7 +9,7 @@
                  styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
         <p:outputLabel for="land_input1" value="题目"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input1"/>
+            <p:inputText id="land_input1" value="#{collateralAction.data.land.title}"/>
             <label>题目</label>
         </h:panelGroup>
         <p:outputLabel for="land_menu1" value="土地类型"/>
@@ -35,41 +35,41 @@
                 <f:selectItem itemLabel="李沧区" itemValue="1"/>
                 <f:selectItem itemLabel="崂山区" itemValue="1"/>
             </p:selectOneMenu>
-            <p:inputText/>
+            <p:inputText value="#{collateralAction.data.land.location}"/>
         </p:panelGrid>
         <p:outputLabel for="land_input2" value="土地证书编号"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input2"/>
+            <p:inputText id="land_input2" value="#{collateralAction.data.land.landCertNo}"/>
             <label>土地证书编号</label>
         </h:panelGroup>
         <p:outputLabel for="land_input3" value="剩余使用年限"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input3"/>
+            <p:inputText id="land_input3" value="#{collateralAction.data.land.restYears}"/>
             <label>剩余使用年限</label>
         </h:panelGroup>
         <p:outputLabel for="land_input4" value="土地使用权面积"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input4"/>
+            <p:inputText id="land_input4" value="#{collateralAction.data.land.landUseRightArea}"/>
             <label>土地使用权面积</label>
         </h:panelGroup>
         <p:outputLabel for="land_input5" value="容积率"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input5"/>
+            <p:inputText id="land_input5" value="#{collateralAction.data.land.volumeRatio}"/>
             <label>容积率</label>
         </h:panelGroup>
         <p:outputLabel for="land_input6" value="绿地率"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input6"/>
+            <p:inputText id="land_input6" value="#{collateralAction.data.land.greenLandRate}"/>
             <label>绿地率</label>
         </h:panelGroup>
         <p:outputLabel for="land_input7" value="建筑密度"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input7"/>
+            <p:inputText id="land_input7" value="#{collateralAction.data.land.buildingDensity}"/>
             <label>建筑密度</label>
         </h:panelGroup>
         <p:outputLabel for="land_input8" value="地上住户、占用情况"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input8"/>
+            <p:inputText id="land_input8" value="#{collateralAction.data.land.household}"/>
             <label>地上住户、占用情况</label>
         </h:panelGroup>
         <p:outputLabel for="land_pg2" value="是否查封"/>
