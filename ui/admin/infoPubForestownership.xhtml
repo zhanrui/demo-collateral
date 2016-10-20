@@ -1,0 +1,186 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>林权</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="forestownership_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_pg1" value="区域位置"/>
+        <p:panelGrid id="forestownership_pg1" columns="4">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="山东省" itemValue=""/>
+                <f:selectItem itemLabel="安徽省" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="青岛市" itemValue=""/>
+                <f:selectItem itemLabel="济南市" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="市南区" itemValue=""/>
+                <f:selectItem itemLabel="市北区" itemValue="1"/>
+                <f:selectItem itemLabel="李沧区" itemValue="1"/>
+                <f:selectItem itemLabel="崂山区" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="forestownership_input2" value="林权证编号"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input2"/>
+            <label>林权证编号</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_pg2" value="林权面积"/>
+        <p:panelGrid id="forestownership_pg2" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="亩"/>
+        </p:panelGrid>
+        <p:outputLabel for="forestownership_input3" value="主要树种"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input3"/>
+            <label>主要树种</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_menu1" value="林种"/>
+        <p:selectOneMenu id="forestownership_menu1">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="防护林" itemValue="1"/>
+            <f:selectItem itemLabel="国防林" itemValue="2"/>
+            <f:selectItem itemLabel="材林" itemValue="3"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="forestownership_pg3" value="经营期限"/>
+        <p:panelGrid id="forestownership_pg3" columns="7">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="1990" itemValue="1"/>
+                <f:selectItem itemLabel="1991" itemValue="2"/>
+                <f:selectItem itemLabel="1992" itemValue="3"/>
+                <f:selectItem itemLabel="1993" itemValue="4"/>
+                <f:selectItem itemLabel="1994" itemValue="5"/>
+                <f:selectItem itemLabel="1995" itemValue="6"/>
+                <f:selectItem itemLabel="1996" itemValue="7"/>
+                <f:selectItem itemLabel="1997" itemValue="8"/>
+                <f:selectItem itemLabel="1998" itemValue="9"/>
+                <f:selectItem itemLabel="1999" itemValue="18"/>
+                <f:selectItem itemLabel="2001" itemValue="11"/>
+                <f:selectItem itemLabel="2002" itemValue="12"/>
+                <f:selectItem itemLabel="2003" itemValue="13"/>
+                <f:selectItem itemLabel="2004" itemValue="14"/>
+                <f:selectItem itemLabel="2005" itemValue="15"/>
+                <f:selectItem itemLabel="2006" itemValue="16"/>
+                <f:selectItem itemLabel="2007" itemValue="17"/>
+                <f:selectItem itemLabel="2008" itemValue="18"/>
+                <f:selectItem itemLabel="2009" itemValue="19"/>
+                <f:selectItem itemLabel="2010" itemValue="20"/>
+                <f:selectItem itemLabel="2011" itemValue="21"/>
+                <f:selectItem itemLabel="2012" itemValue="22"/>
+                <f:selectItem itemLabel="2013" itemValue="23"/>
+                <f:selectItem itemLabel="2014" itemValue="24"/>
+                <f:selectItem itemLabel="2015" itemValue="25"/>
+                <f:selectItem itemLabel="2016" itemValue="26"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="年"/>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="1" itemValue="1"/>
+                <f:selectItem itemLabel="2" itemValue="2"/>
+                <f:selectItem itemLabel="3" itemValue="3"/>
+                <f:selectItem itemLabel="4" itemValue="4"/>
+                <f:selectItem itemLabel="5" itemValue="5"/>
+                <f:selectItem itemLabel="6" itemValue="6"/>
+                <f:selectItem itemLabel="7" itemValue="7"/>
+                <f:selectItem itemLabel="8" itemValue="8"/>
+                <f:selectItem itemLabel="9" itemValue="9"/>
+                <f:selectItem itemLabel="10" itemValue="10"/>
+                <f:selectItem itemLabel="11" itemValue="11"/>
+                <f:selectItem itemLabel="12" itemValue="12"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="月"/>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="1" itemValue="1"/>
+                <f:selectItem itemLabel="2" itemValue="2"/>
+                <f:selectItem itemLabel="3" itemValue="3"/>
+                <f:selectItem itemLabel="4" itemValue="4"/>
+                <f:selectItem itemLabel="5" itemValue="5"/>
+                <f:selectItem itemLabel="6" itemValue="6"/>
+                <f:selectItem itemLabel="7" itemValue="7"/>
+                <f:selectItem itemLabel="8" itemValue="8"/>
+                <f:selectItem itemLabel="9" itemValue="9"/>
+                <f:selectItem itemLabel="10" itemValue="10"/>
+                <f:selectItem itemLabel="11" itemValue="11"/>
+                <f:selectItem itemLabel="12" itemValue="12"/>
+                <f:selectItem itemLabel="13" itemValue="13"/>
+                <f:selectItem itemLabel="14" itemValue="14"/>
+                <f:selectItem itemLabel="15" itemValue="15"/>
+                <f:selectItem itemLabel="16" itemValue="16"/>
+                <f:selectItem itemLabel="17" itemValue="17"/>
+                <f:selectItem itemLabel="18" itemValue="18"/>
+                <f:selectItem itemLabel="19" itemValue="19"/>
+                <f:selectItem itemLabel="20" itemValue="20"/>
+                <f:selectItem itemLabel="21" itemValue="21"/>
+                <f:selectItem itemLabel="22" itemValue="22"/>
+                <f:selectItem itemLabel="23" itemValue="23"/>
+                <f:selectItem itemLabel="24" itemValue="24"/>
+                <f:selectItem itemLabel="25" itemValue="25"/>
+                <f:selectItem itemLabel="26" itemValue="26"/>
+                <f:selectItem itemLabel="27" itemValue="27"/>
+                <f:selectItem itemLabel="28" itemValue="28"/>
+                <f:selectItem itemLabel="29" itemValue="29"/>
+                <f:selectItem itemLabel="30" itemValue="30"/>
+                <f:selectItem itemLabel="31" itemValue="31"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="日"/>
+            <p:outputLabel value="止"/>
+        </p:panelGrid>
+        <p:outputLabel for="forestownership_pg4" value="是否抵押"/>
+        <p:panelGrid id="forestownership_pg4">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1" />
+                <f:selectItem itemLabel="否" itemValue="0" />
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="forestownership_input4" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input4"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_input5" value="购买人条件"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input5"/>
+            <label>购买人条件</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_input6" value="其他内容"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="forestownership_input6"/>
+            <label>其他内容</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_file1" value="上传图片"/>
+        <p:fileUpload id="forestownership_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" style="width:100%" />
+
+        <p:outputLabel for="forestownership_input7" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="forestownership_input7"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="forestownership_radio1" value="是否重点推荐"/>
+        <p:selectOneRadio id="forestownership_radio1" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1" />
+            <f:selectItem itemLabel="否" itemValue="0" />
+        </p:selectOneRadio>
+
+    </p:panelGrid>
+
+    <p:panelGrid columns="4"  layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+    </p:panelGrid>
+
+</ui:composition>

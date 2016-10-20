@@ -1,0 +1,217 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>住房</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="housing_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_radio1" value="住房属性"/>
+        <p:selectOneRadio id="housing_radio1" columns="2">
+            <f:selectItem itemLabel="商住房" itemValue="1"/>
+            <f:selectItem itemLabel="一般住宅" itemValue="0"/>
+        </p:selectOneRadio>
+        <p:outputLabel for="housing_input2" value="房产证号"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input2"/>
+            <label>房产证号</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_menu1" value="建筑类型"/>
+        <p:selectOneMenu id="housing_menu1">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="普通住宅" itemValue="1"/>
+            <f:selectItem itemLabel="公寓" itemValue="2"/>
+            <f:selectItem itemLabel="别墅" itemValue="3"/>
+            <f:selectItem itemLabel="其他" itemValue="4"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="housing_pg1" value="区域位置"/>
+        <p:panelGrid id="housing_pg1" columns="4">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="山东省" itemValue=""/>
+                <f:selectItem itemLabel="安徽省" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="青岛市" itemValue=""/>
+                <f:selectItem itemLabel="济南市" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="市南区" itemValue=""/>
+                <f:selectItem itemLabel="市北区" itemValue="1"/>
+                <f:selectItem itemLabel="李沧区" itemValue="1"/>
+                <f:selectItem itemLabel="崂山区" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_pg2" value="楼层"/>
+        <p:panelGrid id="housing_pg2" columns="6">
+            <p:outputLabel value="总共"/>
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="层"/>
+            <p:outputLabel value="第"/>
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="层"/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_pg3" value="建筑面积"/>
+        <p:panelGrid id="housing_pg3" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="平方米"/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_pg4" value="使用面积"/>
+        <p:panelGrid id="housing_pg4" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="平方米"/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_menu2" value="户型"/>
+        <p:selectOneMenu id="housing_menu2">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="一室" itemValue="1"/>
+            <f:selectItem itemLabel="两室" itemValue="2"/>
+            <f:selectItem itemLabel="三室" itemValue="3"/>
+            <f:selectItem itemLabel="四室" itemValue="5"/>
+            <f:selectItem itemLabel="复式" itemValue="6"/>
+            <f:selectItem itemLabel="顶加阁" itemValue="7"/>
+            <f:selectItem itemLabel="别墅" itemValue="8"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="housing_menu3" value="建成年份"/>
+        <p:selectOneMenu id="housing_menu3">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="1990" itemValue="1"/>
+            <f:selectItem itemLabel="1991" itemValue="2"/>
+            <f:selectItem itemLabel="1992" itemValue="3"/>
+            <f:selectItem itemLabel="1993" itemValue="4"/>
+            <f:selectItem itemLabel="1994" itemValue="5"/>
+            <f:selectItem itemLabel="1995" itemValue="6"/>
+            <f:selectItem itemLabel="1996" itemValue="7"/>
+            <f:selectItem itemLabel="1997" itemValue="8"/>
+            <f:selectItem itemLabel="1998" itemValue="9"/>
+            <f:selectItem itemLabel="1999" itemValue="18"/>
+            <f:selectItem itemLabel="2001" itemValue="11"/>
+            <f:selectItem itemLabel="2002" itemValue="12"/>
+            <f:selectItem itemLabel="2003" itemValue="13"/>
+            <f:selectItem itemLabel="2004" itemValue="14"/>
+            <f:selectItem itemLabel="2005" itemValue="15"/>
+            <f:selectItem itemLabel="2006" itemValue="16"/>
+            <f:selectItem itemLabel="2007" itemValue="17"/>
+            <f:selectItem itemLabel="2008" itemValue="18"/>
+            <f:selectItem itemLabel="2009" itemValue="19"/>
+            <f:selectItem itemLabel="2010" itemValue="20"/>
+            <f:selectItem itemLabel="2011" itemValue="21"/>
+            <f:selectItem itemLabel="2012" itemValue="22"/>
+            <f:selectItem itemLabel="2013" itemValue="23"/>
+            <f:selectItem itemLabel="2014" itemValue="24"/>
+            <f:selectItem itemLabel="2015" itemValue="25"/>
+            <f:selectItem itemLabel="2016" itemValue="26"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="housing_radio2" value="土地使用权性质"/>
+        <p:selectOneRadio id="housing_radio2" columns="2">
+            <f:selectItem itemLabel="出让" itemValue="1"/>
+            <f:selectItem itemLabel="划拨" itemValue="0"/>
+        </p:selectOneRadio>
+        <p:outputLabel for="housing_input3" value="土地使用权期限"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input3"/>
+            <label>土地使用权期限</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_pg5" value="是否租赁"/>
+        <p:panelGrid id="housing_pg5">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_pg6" value="是否查封"/>
+        <p:panelGrid id="housing_pg6">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_pg7" value="是否抵押"/>
+        <p:panelGrid id="housing_pg7">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_input4" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input4"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_pg8" value="屋内设施"/>
+        <p:panelGrid id="housing_pg10" columns="1">
+            <p:selectManyCheckbox id="housing_pg8">
+                <f:selectItem itemLabel="水" itemValue="水"/>
+                <f:selectItem itemLabel="电" itemValue="电"/>
+                <f:selectItem itemLabel="暖气" itemValue="暖气"/>
+                <f:selectItem itemLabel="天然气" itemValue="天然气"/>
+                <f:selectItem itemLabel="电视机" itemValue="电视机"/>
+                <f:selectItem itemLabel="空调" itemValue="空调"/>
+                <f:selectItem itemLabel="热水器" itemValue="热水器"/>
+                <f:selectItem itemLabel="洗衣机" itemValue="洗衣机"/>
+                <f:selectItem itemLabel="床" itemValue="床"/>
+                <f:selectItem itemLabel="橱柜" itemValue="橱柜"/>
+                <f:selectItem itemLabel="沙发" itemValue="沙发"/>
+            </p:selectManyCheckbox>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_menu4" value="装修情况"/>
+        <p:selectOneMenu id="housing_menu4">
+            <f:selectItem itemLabel="" itemValue=""/>
+            <f:selectItem itemLabel="简单装修" itemValue="1"/>
+            <f:selectItem itemLabel="中等装修" itemValue="2"/>
+            <f:selectItem itemLabel="精装修" itemValue="3"/>
+            <f:selectItem itemLabel="豪华装修" itemValue="4"/>
+        </p:selectOneMenu>
+        <p:outputLabel for="housing_pg9" value="能否落户"/>
+        <p:panelGrid id="housing_pg9">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="housing_input5" value="学区"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input5"/>
+            <label>学区</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_input6" value="其他内容"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="housing_input6"/>
+            <label>其他内容</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_file1" value="上传图片"/>
+        <p:fileUpload id="housing_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced"
+                      dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                      style="width:100%"/>
+
+        <p:outputLabel for="housing_input7" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="housing_input7"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="housing_radio3" value="是否重点推荐"/>
+        <p:selectOneRadio id="housing_radio3" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1"/>
+            <f:selectItem itemLabel="否" itemValue="0"/>
+        </p:selectOneRadio>
+    </p:panelGrid>
+
+    <p:panelGrid columns="4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+    </p:panelGrid>
+
+</ui:composition>

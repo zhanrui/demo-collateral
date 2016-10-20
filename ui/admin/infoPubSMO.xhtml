@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>钢材、有色金属、油品</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="SMO_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="SMO_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="SMO_input2" value="数量"/>
+        <p:panelGrid id="SMO_input2" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="吨"/>
+        </p:panelGrid>
+        <p:outputLabel for="SMO_input3" value="单价"/>
+        <p:panelGrid id="SMO_input3" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="元"/>
+        </p:panelGrid>
+        <p:outputLabel for="SMO_input4" value="总价"/>
+        <p:panelGrid id="SMO_input4" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="元"/>
+        </p:panelGrid>
+        <p:outputLabel for="SMO_input5" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="SMO_input5"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="SMO_pg1" value="生产年份"/>
+        <p:panelGrid id="SMO_pg1" columns="2">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="1990" itemValue="1"/>
+                <f:selectItem itemLabel="1991" itemValue="2"/>
+                <f:selectItem itemLabel="1992" itemValue="3"/>
+                <f:selectItem itemLabel="1993" itemValue="4"/>
+                <f:selectItem itemLabel="1994" itemValue="5"/>
+                <f:selectItem itemLabel="1995" itemValue="6"/>
+                <f:selectItem itemLabel="1996" itemValue="7"/>
+                <f:selectItem itemLabel="1997" itemValue="8"/>
+                <f:selectItem itemLabel="1998" itemValue="9"/>
+                <f:selectItem itemLabel="1999" itemValue="18"/>
+                <f:selectItem itemLabel="2001" itemValue="11"/>
+                <f:selectItem itemLabel="2002" itemValue="12"/>
+                <f:selectItem itemLabel="2003" itemValue="13"/>
+                <f:selectItem itemLabel="2004" itemValue="14"/>
+                <f:selectItem itemLabel="2005" itemValue="15"/>
+                <f:selectItem itemLabel="2006" itemValue="16"/>
+                <f:selectItem itemLabel="2007" itemValue="17"/>
+                <f:selectItem itemLabel="2008" itemValue="18"/>
+                <f:selectItem itemLabel="2009" itemValue="19"/>
+                <f:selectItem itemLabel="2010" itemValue="20"/>
+                <f:selectItem itemLabel="2011" itemValue="21"/>
+                <f:selectItem itemLabel="2012" itemValue="22"/>
+                <f:selectItem itemLabel="2013" itemValue="23"/>
+                <f:selectItem itemLabel="2014" itemValue="24"/>
+                <f:selectItem itemLabel="2015" itemValue="25"/>
+                <f:selectItem itemLabel="2016" itemValue="26"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="年"/>
+        </p:panelGrid>
+        <p:outputLabel for="SMO_input6" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="SMO_input6"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="SMO_radio1" value="是否重点推荐"/>
+        <p:selectOneRadio id="SMO_radio1" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1"/>
+            <f:selectItem itemLabel="否" itemValue="0"/>
+        </p:selectOneRadio>
+
+    </p:panelGrid>
+
+    <p:panelGrid columns="4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+    </p:panelGrid>
+
+</ui:composition>

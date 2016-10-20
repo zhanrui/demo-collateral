@@ -1,0 +1,142 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>机器设备</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="equipment_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_input2" value="设备名称"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input2"/>
+            <label>设备名称</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_pg1" value="区域位置"/>
+        <p:panelGrid id="equipment_pg1" columns="4">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="山东省" itemValue=""/>
+                <f:selectItem itemLabel="安徽省" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="青岛市" itemValue=""/>
+                <f:selectItem itemLabel="济南市" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="市南区" itemValue=""/>
+                <f:selectItem itemLabel="市北区" itemValue="1"/>
+                <f:selectItem itemLabel="李沧区" itemValue="1"/>
+                <f:selectItem itemLabel="崂山区" itemValue="1"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_input3" value="所属行业"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input3"/>
+            <label>所属行业</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_pg2" value="属性"/>
+        <p:panelGrid id="equipment_pg2">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="通用" itemValue="1"/>
+                <f:selectItem itemLabel="专用" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_menu1" value="品牌"/>
+        <p:panelGrid id="equipment_menu1">
+            <p:selectOneMenu>
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="环球" itemValue="1"/>
+                <f:selectItem itemLabel="小松" itemValue="2"/>
+                <f:selectItem itemLabel="成量" itemValue="3"/>
+                <f:selectItem itemLabel="罗斯" itemValue="4"/>
+            </p:selectOneMenu>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_input4" value="型号"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input4"/>
+            <label>型号</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_input5" value="产地"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input5"/>
+            <label>产地</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_pg3" value="数量"/>
+        <p:panelGrid id="equipment_pg3" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="台"/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_pg4" value="已使用年限"/>
+        <p:panelGrid id="equipment_pg4" columns="2">
+            <p:inputText style="width:40px;"/>
+            <p:outputLabel value="年"/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_input6" value="产品大类"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input6"/>
+            <label>产品大类</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_pg6" value="是否查封"/>
+        <p:panelGrid id="equipment_pg6">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_pg7" value="是否抵押"/>
+        <p:panelGrid id="equipment_pg7">
+            <p:selectOneRadio columns="4">
+                <f:selectItem itemLabel="是" itemValue="1"/>
+                <f:selectItem itemLabel="否" itemValue="0"/>
+            </p:selectOneRadio>
+            <p:inputText/>
+        </p:panelGrid>
+        <p:outputLabel for="equipment_input7" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input7"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_input8" value="购买人条件"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input8"/>
+            <label>购买人条件</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_input9" value="其他内容"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="equipment_input9"/>
+            <label>其他内容</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_file1" value="上传图片"/>
+        <p:fileUpload id="equipment_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced"
+                      dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                      style="width:100%"/>
+
+        <p:outputLabel for="equipment_input10" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="equipment_input10"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="equipment_radio3" value="是否重点推荐"/>
+        <p:selectOneRadio id="equipment_radio3" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1"/>
+            <f:selectItem itemLabel="否" itemValue="0"/>
+        </p:selectOneRadio>
+    </p:panelGrid>
+
+    <p:panelGrid columns="4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+    </p:panelGrid>
+
+</ui:composition>

@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h3>票据</h3>
+    <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:outputLabel for="notes_input1" value="题目"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="notes_input1"/>
+            <label>题目</label>
+        </h:panelGroup>
+        <p:outputLabel for="notes_input2" value="票据种类"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="notes_input2"/>
+            <label>票据种类</label>
+        </h:panelGroup>
+        <p:outputLabel for="notes_input3" value="票据号"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="notes_input3"/>
+            <label>票据号</label>
+        </h:panelGroup>
+        <p:outputLabel for="notes_pg1" value="币种"/>
+        <p:panelGrid id="notes_pg1">
+            <p:inputText style="width:40px;"/>
+        </p:panelGrid>
+        <p:outputLabel for="notes_pg2" value="金额"/>
+        <p:panelGrid id="notes_pg2">
+            <p:inputText style="width:40px;"/>
+        </p:panelGrid>
+        <p:outputLabel for="notes_input4" value="评估价值"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputText id="notes_input4"/>
+            <label>评估价值</label>
+        </h:panelGroup>
+        <p:outputLabel for="notes_input11" value="押品现状描述"/>
+        <h:panelGroup styleClass="md-inputfield">
+            <p:inputTextarea id="notes_input11"/>
+            <label>押品现状描述</label>
+        </h:panelGroup>
+        <p:outputLabel for="notes_radio1" value="是否重点推荐"/>
+        <p:selectOneRadio id="notes_radio1" layout="responsive" columns="4">
+            <f:selectItem itemLabel="是" itemValue="1"/>
+            <f:selectItem itemLabel="否" itemValue="0"/>
+        </p:selectOneRadio>
+
+    </p:panelGrid>
+
+    <p:panelGrid columns="4" layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+    </p:panelGrid>
+
+</ui:composition>

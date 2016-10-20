@@ -56,9 +56,13 @@
                                     <f:selectItem itemLabel="商业用房" itemValue="3"/>
                                     <f:selectItem itemLabel="住房" itemValue="4"/>
                                     <f:selectItem itemLabel="机器设备" itemValue="5"/>
-                                    <f:selectItem itemLabel="交通运输工具" itemValue="6"/>
-                                    <f:selectItem itemLabel="股权" itemValue="7"/>
-                                    <f:selectItem itemLabel="依法可抵质押的其他资产" itemValue="8"/>
+                                    <f:selectItem itemLabel="机动车" itemValue="6"/>
+                                    <f:selectItem itemLabel="船舶" itemValue="7"/>
+                                    <f:selectItem itemLabel="股权" itemValue="8"/>
+                                    <f:selectItem itemLabel="林权" itemValue="9"/>
+                                    <f:selectItem itemLabel="钢材、有色金属、油品" itemValue="10"/>
+                                    <f:selectItem itemLabel="票据" itemValue="11"/>
+                                    <f:selectItem itemLabel="其他类押品资产" itemValue="12"/>
                                     <p:ajax
                                             update="form1"/>
                                 </p:selectOneMenu>
@@ -103,6 +107,33 @@
                             </p:panel>
                             <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('3')}">
                                 <ui:include src="infoPubBusinessBuilding.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('4')}">
+                                <ui:include src="infoPubHousing.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('5')}">
+                                <ui:include src="infoPubEquipment.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('6')}">
+                                <ui:include src="infoPubVehicle.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('7')}">
+                                <ui:include src="infoPubShips.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('8')}">
+                                <ui:include src="infoPubStockright.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('9')}">
+                                <ui:include src="infoPubForestownership.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('10')}">
+                                <ui:include src="infoPubSMO.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('11')}">
+                                <ui:include src="infoPubNotes.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{infoPubAction.assetType.equals('12')}">
+                                <ui:include src="infoPubOthers.xhtml"/>
                             </p:panel>
                         </div>
                     </div>
