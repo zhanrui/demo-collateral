@@ -5,12 +5,14 @@ import com.rs.admin.repository.model.Land;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by baiqg on 2016/10/20.
  */
+@ManagedBean
 @ApplicationScoped
 public class DbRepo {
     private List<Collateral> collateralList;
