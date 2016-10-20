@@ -325,12 +325,12 @@
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
 
 .login-body {
-  background: url("#{resource['ultima-layout:images/login/login.png']}") top left no-repeat #f7f7f7;
+  background: url("#{resource['ultima-layout:images/login/login_bg.jpg']}") top left no-repeat #f7f7f7;
   background-size: 100% auto; }
 
 .login-panel {
   text-align: center;
-  width: 350px;
+  width: 450px;
   min-height: 440px;
   padding: 50px 20px;
   margin: 100px auto 0 auto; }
