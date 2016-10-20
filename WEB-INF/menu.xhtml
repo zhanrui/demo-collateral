@@ -48,7 +48,7 @@
                         </ul>
                     </ui:fragment>
 
-                    <pu:menu widgetVar="me">
+                    <pu:menu widgetVar="me" rendered="#{guestPreferences.userType != 0}">
                         <p:menuitem id="um_dashboard" value="工作台" icon="&#xE871;" outcome="/dashboard"/>
                         <p:submenu id="um_components" label="发布管理" icon="&#xE896;">
                             <p:menuitem id="um_sample" value="信息发布" icon="&#xE30B;" outcome="/ui/admin/infoPub.xhtml"/>
@@ -78,6 +78,9 @@
                         </p:submenu>
                         <p:menuitem id="um_utils" value="实用工具" icon="&#xE869;" outcome="/landing"/>
                         <p:menuitem id="um_doc" value="帮助" icon="&#xE880;" outcome="/landing"/>
+                    </pu:menu>
+                    <pu:menu widgetVar="me" rendered="#{guestPreferences.userType == 0}">
+                        <p:menuitem id="um_dashboard_p" value="工作台" icon="&#xE871;" outcome="/dashboard-p"/>
                     </pu:menu>
                 </div>
             </div>
