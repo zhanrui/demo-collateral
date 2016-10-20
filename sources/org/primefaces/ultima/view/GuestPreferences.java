@@ -16,11 +16,15 @@
 package org.primefaces.ultima.view;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
 @SessionScoped
