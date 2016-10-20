@@ -121,9 +121,12 @@
             <f:selectItem itemLabel="否" itemValue="0"/>
         </p:selectOneRadio>
 
-        <!--<p:outputLabel for="btn" value="" />-->
-        <p:commandButton id="factory_btn" value="提交" icon="ui-icon-edit" type="button"/>
+    </p:panelGrid>
 
+    <p:panelGrid columns="4"  layout="grid"
+                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
     </p:panelGrid>
 
 </ui:composition>
