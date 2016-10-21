@@ -8,7 +8,10 @@ public class Land {
     private String assetType;          // 押品资产类别
     private String title;              // 题目
     private String landType;           // 土地类型
-    private String location;           // 区域位置
+    private String province;           // 区域位置-省
+    private String city;               // 区域位置-市
+    private String area;               // 区域位置-区
+    private String location;           // 区域位置-具体位置
     private String landCertNo;         // 土地证书编号
     private String restYears;          // 剩余使用年限
     private String landUseRightArea;   // 土地使用权面积
@@ -37,6 +40,30 @@ public class Land {
 
     public void setLandType(String landType) {
         this.landType = landType;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getLocation() {

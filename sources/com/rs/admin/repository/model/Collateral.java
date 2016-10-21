@@ -13,6 +13,7 @@ public class Collateral {
     private String assetType;                  // 押品资产类别
     private String assetPkid;                  // 押品ID
     private String descTag;                    // 押品描述 标签
+    private String status;                     // 状态
 
     public String getPkid() {
         return pkid;
@@ -84,5 +85,13 @@ public class Collateral {
 
     public void setDescTag(String descTag) {
         this.descTag = descTag;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

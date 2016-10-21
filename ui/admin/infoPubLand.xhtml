@@ -9,93 +9,87 @@
                  styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
         <p:outputLabel for="land_input1" value="题目"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input1" value="#{collateralAction.data.land.title}"/>
+            <p:inputText id="land_input1" value="#{collateralAction.land.title}"/>
             <label>题目</label>
         </h:panelGroup>
         <p:outputLabel for="land_menu1" value="土地类型"/>
         <p:selectOneMenu id="land_menu1">
-            <f:selectItem itemLabel="" itemValue=""/>
-            <f:selectItem itemLabel="工业用地" itemValue="1"/>
-            <f:selectItem itemLabel="商业用地" itemValue="2"/>
-            <f:selectItem itemLabel="农业用地" itemValue="3"/>
+            <f:selectItems value="#{collateralAction.landTypeMenu}"/>
         </p:selectOneMenu>
         <p:outputLabel for="land_pg1" value="区域位置"/>
-        <p:panelGrid id="land_pg1" columns="4">
-            <p:selectOneMenu>
-                <f:selectItem itemLabel="山东省" itemValue=""/>
-                <f:selectItem itemLabel="安徽省" itemValue="1"/>
-            </p:selectOneMenu>
-            <p:selectOneMenu>
-                <f:selectItem itemLabel="青岛市" itemValue=""/>
-                <f:selectItem itemLabel="济南市" itemValue="1"/>
-            </p:selectOneMenu>
-            <p:selectOneMenu>
-                <f:selectItem itemLabel="市南区" itemValue=""/>
-                <f:selectItem itemLabel="市北区" itemValue="1"/>
-                <f:selectItem itemLabel="李沧区" itemValue="1"/>
-                <f:selectItem itemLabel="崂山区" itemValue="1"/>
-            </p:selectOneMenu>
-            <p:inputText value="#{collateralAction.data.land.location}"/>
+        <p:panelGrid id="land_pg1">
+            <p:panelGrid columns="3">
+                <p:selectOneMenu value="#{collateralAction.land.province}">
+                    <f:selectItems value="#{collateralAction.provinceMenu}"/>
+                </p:selectOneMenu>
+                <p:selectOneMenu value="#{collateralAction.land.city}">
+                    <f:selectItems value="#{collateralAction.cityMenu}"/>
+                </p:selectOneMenu>
+                <p:selectOneMenu value="#{collateralAction.land.area}">
+                    <f:selectItems value="#{collateralAction.areaMenu}"/>
+                </p:selectOneMenu>
+            </p:panelGrid>
+            <p:panelGrid>
+                <p:inputText value="#{collateralAction.land.location}"/>
+            </p:panelGrid>
         </p:panelGrid>
         <p:outputLabel for="land_input2" value="土地证书编号"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input2" value="#{collateralAction.data.land.landCertNo}"/>
+            <p:inputText id="land_input2" value="#{collateralAction.land.landCertNo}"/>
             <label>土地证书编号</label>
         </h:panelGroup>
         <p:outputLabel for="land_input3" value="剩余使用年限"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input3" value="#{collateralAction.data.land.restYears}"/>
+            <p:inputText id="land_input3" value="#{collateralAction.land.restYears}"/>
             <label>剩余使用年限</label>
         </h:panelGroup>
         <p:outputLabel for="land_input4" value="土地使用权面积"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input4" value="#{collateralAction.data.land.landUseRightArea}"/>
+            <p:inputText id="land_input4" value="#{collateralAction.land.landUseRightArea}"/>
             <label>土地使用权面积</label>
         </h:panelGroup>
         <p:outputLabel for="land_input5" value="容积率"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input5" value="#{collateralAction.data.land.volumeRatio}"/>
+            <p:inputText id="land_input5" value="#{collateralAction.land.volumeRatio}"/>
             <label>容积率</label>
         </h:panelGroup>
         <p:outputLabel for="land_input6" value="绿地率"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input6" value="#{collateralAction.data.land.greenLandRate}"/>
+            <p:inputText id="land_input6" value="#{collateralAction.land.greenLandRate}"/>
             <label>绿地率</label>
         </h:panelGroup>
         <p:outputLabel for="land_input7" value="建筑密度"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input7" value="#{collateralAction.data.land.buildingDensity}"/>
+            <p:inputText id="land_input7" value="#{collateralAction.land.buildingDensity}"/>
             <label>建筑密度</label>
         </h:panelGroup>
         <p:outputLabel for="land_input8" value="地上住户、占用情况"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input8" value="#{collateralAction.data.land.household}"/>
+            <p:inputText id="land_input8" value="#{collateralAction.land.household}"/>
             <label>地上住户、占用情况</label>
         </h:panelGroup>
         <p:outputLabel for="land_pg2" value="是否查封"/>
         <p:panelGrid id="land_pg2">
-            <p:selectOneRadio columns="4">
-                <f:selectItem itemLabel="是" itemValue="1" />
-                <f:selectItem itemLabel="否" itemValue="0" />
+            <p:selectOneRadio columns="4" value="#{collateralAction.land.isClosed}">
+                <f:selectItems value="#{collateralAction.yesOrNoMenu}"/>
             </p:selectOneRadio>
             <p:inputText/>
         </p:panelGrid>
         <p:outputLabel for="land_pg3" value="是否抵押"/>
         <p:panelGrid id="land_pg3">
-            <p:selectOneRadio columns="4">
-                <f:selectItem itemLabel="是" itemValue="1" />
-                <f:selectItem itemLabel="否" itemValue="0" />
+            <p:selectOneRadio columns="4" value="#{collateralAction.land.isMortgage}">
+                <f:selectItems value="#{collateralAction.yesOrNoMenu}"/>
             </p:selectOneRadio>
             <p:inputText/>
         </p:panelGrid>
         <p:outputLabel for="land_input9" value="评估价值"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input9"/>
+            <p:inputText id="land_input9" value="#{collateralAction.land.valuation}"/>
             <label>评估价值</label>
         </h:panelGroup>
         <p:outputLabel for="land_input10" value="购买人条件"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputText id="land_input10"/>
+            <p:inputText id="land_input10" value="#{collateralAction.land.buyerConditon}"/>
             <label>购买人条件</label>
         </h:panelGroup>
         <p:outputLabel for="land_file1" value="上传图片"/>
@@ -108,9 +102,8 @@
             <label>押品现状描述</label>
         </h:panelGroup>
         <p:outputLabel for="land_radio3" value="是否重点推荐"/>
-        <p:selectOneRadio id="land_radio3" layout="responsive" columns="4">
-            <f:selectItem itemLabel="是" itemValue="1" />
-            <f:selectItem itemLabel="否" itemValue="0" />
+        <p:selectOneRadio id="land_radio3" layout="responsive" columns="4" value="#{collateralAction.land.isRecommend}">
+            <f:selectItems value="#{collateralAction.yesOrNoMenu}"/>
         </p:selectOneRadio>
 
     </p:panelGrid>
@@ -118,7 +111,8 @@
     <p:panelGrid columns="4"  layout="grid"
                  styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
         <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
-        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"/>
+        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
+                         action="#{collateralAction.draftAdd()}" update="form,form:msgs"/>
     </p:panelGrid>
 
 </ui:composition>
