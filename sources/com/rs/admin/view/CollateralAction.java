@@ -16,6 +16,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -44,7 +45,7 @@ public class CollateralAction {
 
     @PostConstruct
     public void init() {
-        dataList = dbRepo.getCollateralList();
+        dataList = new ArrayList<Collateral>();
         unitMenu = EnumUtil.getUnitMenu();           // 所属单位
         assetTypeMenu = EnumUtil.getAssetTypeMenu(); // 押品资产类别
         landTypeMenu = EnumUtil.getLandTypeMenu();   // 土地类型
@@ -57,6 +58,13 @@ public class CollateralAction {
         yesOrNoMenu = EnumUtil.getEnuYesOrNoMenu();
         Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         status = params.get("status");
+        if (StringUtils.isNotEmpty(status)) {
+            for (Collateral record : dbRepo.getCollateralList()) {
+                if (record.getStatus().equals(status)) {
+                    dataList.add(record);
+                }
+            }
+        }
     }
 
     /**
@@ -102,7 +110,7 @@ public class CollateralAction {
 
     public void selectRecord(Collateral collateral) {
         data = collateral;
-        if (StringUtils.isNotEmpty(data.getAssetType()) && data.getAssetType().equals("1")) {
+        if (StringUtils.isNotEmpty(data.getAssetType()) && data.getAssetType().equals("0")) { // 土地
             for (Land record : dbRepo.getLandList()) {
                 if (record.getPkid().equals(data.getAssetPkid())) {
                     land = record;

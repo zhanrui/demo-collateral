@@ -2,6 +2,7 @@ package com.rs.admin;
 
 import com.rs.admin.repository.model.Collateral;
 import com.rs.admin.repository.model.Land;
+import com.rs.enums.*;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
@@ -23,14 +24,15 @@ public class DbRepo {
         collateralList = new ArrayList<Collateral>();
         landList = new ArrayList<Land>();
 
+        // 测试数据-草稿-土地
         Land land = new Land();
         land.setPkid("01");
-        land.setAssetType("1");
+        land.setAssetType(EnuAssetType.TYPE_0.getCode());
         land.setTitle("宜昌路16号");
-        land.setLandType("2");
-        land.setProvince("0");
-        land.setCity("1");
-        land.setArea("1");
+        land.setLandType(EnuLandType.TYPE_1.getCode());
+        land.setProvince(EnuProvince.PROVINCE_0.getCode());
+        land.setCity(EnuCity.CITY_1.getCode());
+        land.setArea(EnuArea.AREA_1.getCode());
         land.setLocation("宜昌路16号");
         land.setLandCertNo("331-317-370203-029-508-GB00001");
         land.setRestYears("70");
@@ -39,24 +41,25 @@ public class DbRepo {
         land.setGreenLandRate("≥35%");
         land.setBuildingDensity("≤25%");
         land.setHousehold("2000");
-        land.setIsClosed("0");
-        land.setIsMortgage("0");
+        land.setIsClosed(EnuYesOrNo.NO.getCode());
+        land.setIsMortgage(EnuYesOrNo.NO.getCode());
         land.setValuation("5000元/㎡");
-        land.setBuyerConditon("无");
+        land.setBuyerConditon("房地产开发商");
         land.setPresentDescription("宜昌路16号甲地块原为山东省食品进出口公司四方仓库用地，青岛东大物流有限公司也在此办公，现在尚未拆迁。");
-        land.setIsRecommend("1");
+        land.setIsRecommend(EnuYesOrNo.NO.getCode());
         landList.add(land);
 
         Collateral collateral = new Collateral();
         collateral.setPkid("8861A8FF533F4C52B87D1918983C58DC");
-        collateral.setUnit("单位1");
+        collateral.setUnit(EnuUnit.UNIT_0.getCode());
         collateral.setContact("张一");
         collateral.setPhone("18800000001");
         collateral.setMail("zhangyi@rs.com");
         collateral.setDealType("抵债资产");
-        collateral.setAssetType("1");
+        collateral.setAssetType(EnuAssetType.TYPE_0.getCode());
         collateral.setAssetPkid("01");
         collateral.setDescTag("土地 抵债资产 仓库 宜昌路");
+        collateral.setStatus(EnuCollateralStatus.STATUS_0.getCode());
         collateralList.add(collateral);
     }
 
