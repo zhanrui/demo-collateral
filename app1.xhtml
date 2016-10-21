@@ -39,8 +39,7 @@
                                     <f:selectItems value="#{checkboxView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
                                 </p:selectManyCheckbox>
 
-                                <!--<p:outputLabel for="btn" value="" />-->
-                                <p:commandButton id="btn" value="提交" icon="ui-icon-edit" type="button"/>
+                                <p:commandButton id="btn" value="提交" icon="ui-icon-edit"  action="#{logoutView.onLogout}"/>
 
                             </p:panelGrid>
 

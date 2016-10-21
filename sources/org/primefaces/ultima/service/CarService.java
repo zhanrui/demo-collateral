@@ -32,19 +32,21 @@ public class CarService {
 	private final static String[] brands;
     
     static {
-		colors = new String[10];
-		colors[0] = "类别1";
-		colors[1] = "类别2";
-		colors[2] = "类别3";
-		colors[3] = "类别3";
-		colors[4] = "类别3";
-		colors[5] = "类别3";
-		colors[6] = "类别3";
-		colors[7] = "类别3";
-		colors[8] = "类别3";
-		colors[9] = "类别3";
+		colors = new String[12];
+		colors[0] = "土地";
+		colors[1] = "厂房";
+		colors[2] = "商务用房";
+		colors[3] = "住房";
+		colors[4] = "机器设备";
+		colors[5] = "机动车";
+		colors[6] = "船舶";
+		colors[7] = "股权";
+		colors[8] = "林权";
+		colors[9] = "钢材、有色金属、油品";
+		colors[10] = "票据";
+		colors[11] = "其它";
 
-		brands = new String[10];
+		brands = new String[12];
 		brands[0] = "业务1";
 		brands[1] = "业务1";
 		brands[2] = "业务1";
@@ -60,7 +62,7 @@ public class CarService {
     public List<Car> createCars(int size) {
         List<Car> list = new ArrayList<Car>();
 		for(int i = 0 ; i < size ; i++) {
-			list.add(new Car(getRandomId(), getRandomBrand(), getRandomYear(), getRandomColor(), getRandomPrice(), getRandomSoldState()));
+			list.add(new Car(colors[i], "" + getRandomPrice(10000), getRandomPrice(100), "" + getRandomPrice(100000), getRandomPrice(100000), getRandomSoldState()));
         }
         
         return list;
@@ -85,7 +87,10 @@ public class CarService {
     private int getRandomPrice() {
 		return (int) (Math.random() * 100000);
 	}
-    
+    private int getRandomPrice(int i) {
+		return (int) (Math.random() * i);
+	}
+
     private boolean getRandomSoldState() {
 		return (Math.random() > 0.5) ? true: false;
 	}

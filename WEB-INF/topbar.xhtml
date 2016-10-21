@@ -1,32 +1,33 @@
-<ui:composition 
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:pu="http://primefaces.org/ultima">
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pu="http://primefaces.org/ultima">
 
     <div class="topbar clearfix">
-        <div class="topbar-left">            
+        <div class="topbar-left">
             <div class="logo"></div>
         </div>
-        
+
         <div class="topbar-right">
             <a id="menu-button" href="#">
                 <i></i>
             </a>
-            
+
             <a id="topbar-menu-button" href="#">
                 <i class="material-icons">&#xE5D2;</i>
             </a>
             <ul class="topbar-items fadeInDown animated">
-                <ui:fragment rendered="#{guestPreferences.profileMode == 'overlay'||guestPreferences.menuLayout == 'menu-layout-static menu-layout-horizontal'}">
+                <ui:fragment
+                        rendered="#{guestPreferences.profileMode == 'overlay'||guestPreferences.menuLayout == 'menu-layout-static menu-layout-horizontal'}">
                     <li class="profile-item">
-                        <a href="#">                            
+                        <a href="#">
                             <div class="profile-image"></div>
                             <span class="topbar-item-name">Jane Williams</span>
                         </a>
-                        
+
                         <ul class="ultima-menu animated">
                             <li role="menuitem">
                                 <a href="#">
@@ -123,11 +124,13 @@
                 </li>
                 <li class="search-item">
                     <h:panelGroup styleClass="md-inputfield">
-                        <p:inputText  />
+                        <p:inputText size="30"/>
                         <label>搜索</label>
-                        <i class="topbar-icon material-icons">&#xE8B6;</i>
+                        <a href="#{request.contextPath}/sample.xhtml">
+                            <i class="topbar-icon material-icons">&#xE8B6;</i>
+                        </a>
                     </h:panelGroup>
-                    
+
                 </li>
             </ul>
         </div>

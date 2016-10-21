@@ -11,12 +11,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ManagedBean
-public class Logout implements Serializable {
-    public void onLogout() throws IOException {
+public class LogoutView implements Serializable {
+    @PostConstruct
+    public void init(){
+        ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+    }
+    public void onLogout()  {
 //        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 //        return "/landing.xhtml?faces-redirect=true";
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         ec.invalidateSession();
-        ec.redirect(ec.getRequestContextPath() + "/landing.xhtml");
+        try {
+            ec.redirect(ec.getRequestContextPath() + "/landing.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
