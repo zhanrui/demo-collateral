@@ -68,6 +68,21 @@ public class DbRepo {
         collateralList.add(collateral);
     }
 
+    public void updCollateral(Collateral collateral) {
+        delCollateral(collateral);
+        addCollateral(collateral);
+    }
+
+    public void delCollateral(Collateral collateral) {
+        int i = 0;
+        for (i = 0; i < collateralList.size(); i++) {
+            if (collateral.getPkid().equals(collateralList.get(i).getPkid())) {
+                break;
+            }
+        }
+        collateralList.remove(i);
+    }
+
     public List<Collateral> getCollateralList() {
         return collateralList;
     }
@@ -78,5 +93,20 @@ public class DbRepo {
 
     public void addLand(Land land) {
         landList.add(land);
+    }
+
+    public void updLand(Land land) {
+        delLand(land);
+        addLand(land);
+    }
+
+    public void delLand(Land land) {
+        int i = 0;
+        for (i = 0; i < landList.size(); i++) {
+            if (land.getPkid().equals(landList.get(i).getPkid())) {
+                break;
+            }
+        }
+        landList.remove(i);
     }
 }

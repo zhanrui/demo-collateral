@@ -5,6 +5,7 @@ import com.rs.admin.repository.model.Collateral;
 import com.rs.admin.repository.model.Land;
 import com.rs.enums.EnuAssetType;
 import com.rs.enums.EnuCollateralStatus;
+import com.rs.enums.EnuUnit;
 import com.rs.util.EnumUtil;
 import com.rs.util.MessageUtil;
 import com.rs.util.ToolUtil;
@@ -33,15 +34,17 @@ public class CollateralAction {
     private List<Collateral> dataList;
     private Collateral data;
     private Collateral collateralAdd = new Collateral();
-    private Land land = new Land();         // 土地
-    private List<SelectItem> unitMenu;      // 所属单位
-    private List<SelectItem> assetTypeMenu; // 押品资产类别
-    private List<SelectItem> landTypeMenu;  // 土地类型
-    private List<SelectItem> provinceMenu;  // 区域位置-省
-    private List<SelectItem> cityMenu;      // 区域位置-市
-    private List<SelectItem> areaMenu;      // 区域位置-区
-    private List<SelectItem> yesOrNoMenu;   // 是否
-    private String status;                  // 押品信息状态
+    private Land land = new Land();                          // 土地
+    private List<SelectItem> unitMenu;                       // 所属单位
+    private List<SelectItem> assetTypeMenu;                  // 押品资产类别
+    private List<SelectItem> landTypeMenu;                   // 土地类型
+    private List<SelectItem> provinceMenu;                   // 区域位置-省
+    private List<SelectItem> cityMenu;                       // 区域位置-市
+    private List<SelectItem> areaMenu;                       // 区域位置-区
+    private List<SelectItem> yesOrNoMenu;                    // 是否
+    private String status;                                   // 押品信息状态
+    private EnuUnit enuUnit = EnuUnit.UNIT_0;                // 所属单位
+    private EnuAssetType enuAssetType = EnuAssetType.TYPE_0; // 押品资产类别
 
     @PostConstruct
     public void init() {
@@ -97,6 +100,33 @@ public class CollateralAction {
         }
         dbRepo.addCollateral(collateralAdd);
         MessageUtil.addInfo("信息发布成功！");
+    }
+
+    /**
+     * 保存修改
+     */
+    public void infoUpdate() {
+        dbRepo.updCollateral(data);
+        dbRepo.updLand(land);
+        MessageUtil.addInfo("信息修改成功！");
+    }
+
+    /**
+     * 审核通过
+     */
+    public void checkYes() {
+        data.setStatus(EnuCollateralStatus.STATUS_3.getCode());
+        dbRepo.updCollateral(data);
+        MessageUtil.addInfo("审核成功！");
+    }
+
+    /**
+     * 退回重发
+     */
+    public void checkNo() {
+        data.setStatus(EnuCollateralStatus.STATUS_2.getCode());
+        dbRepo.updCollateral(data);
+        MessageUtil.addInfo("退回成功！");
     }
 
     /**
@@ -227,5 +257,21 @@ public class CollateralAction {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public EnuUnit getEnuUnit() {
+        return enuUnit;
+    }
+
+    public void setEnuUnit(EnuUnit enuUnit) {
+        this.enuUnit = enuUnit;
+    }
+
+    public EnuAssetType getEnuAssetType() {
+        return enuAssetType;
+    }
+
+    public void setEnuAssetType(EnuAssetType enuAssetType) {
+        this.enuAssetType = enuAssetType;
     }
 }

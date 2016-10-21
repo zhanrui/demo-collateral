@@ -13,7 +13,7 @@
             <label>题目</label>
         </h:panelGroup>
         <p:outputLabel for="land_menu1" value="土地类型"/>
-        <p:selectOneMenu id="land_menu1"  value="#{collateralAction.land.landType}">
+        <p:selectOneMenu id="land_menu1" value="#{collateralAction.land.landType}">
             <f:selectItems value="#{collateralAction.landTypeMenu}"/>
         </p:selectOneMenu>
         <p:outputLabel for="land_pg1" value="区域位置"/>
@@ -93,8 +93,10 @@
             <label>购买人条件</label>
         </h:panelGroup>
         <p:outputLabel for="land_file1" value="上传图片"/>
-        <p:fileUpload id="land_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced" dragDropSupport="false"
-                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" style="width:100%" />
+        <p:fileUpload id="land_file1" fileUploadListener="#{fileUploadView.handleFileUpload}" mode="advanced"
+                      dragDropSupport="false"
+                      multiple="true" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                      style="width:100%"/>
 
         <p:outputLabel for="land_input11" value="押品现状描述"/>
         <h:panelGroup styleClass="md-inputfield">
@@ -108,12 +110,27 @@
 
     </p:panelGrid>
 
-    <p:panelGrid columns="4"  layout="grid"
-                 styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
-        <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPub}"
-                         update="form,form:msgs"/>
-        <p:commandButton value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
-                         action="#{collateralAction.draftAdd}" update="form,form:msgs"/>
-    </p:panelGrid>
+    <p:panel style="border:none;" rendered="#{empty collateralAction.status or collateralAction.status.equals('0')}">
+        <p:panelGrid columns="4" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+
+            <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPub}"
+                             update="form,form:msgs"/>
+            <p:commandButton value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
+                             action="#{collateralAction.draftAdd}" update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
+
+    <p:panel style="border:none;" rendered="#{collateralAction.status.equals('1')}">
+        <p:panelGrid columns="3" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+            <p:commandButton value="保存修改" icon="ui-icon-launch" action="#{collateralAction.infoUpdate}"
+                             update="form,form:msgs"/>
+            <p:commandButton value="审核通过" icon="ui-icon-launch" action="#{collateralAction.infoUpdate}"
+                             update="form,form:msgs"/>
+            <p:commandButton value="退回重发" icon="ui-icon-launch" styleClass="orange-btn" action="#{collateralAction.infoUpdate}"
+                             update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
 
 </ui:composition>
