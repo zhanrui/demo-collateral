@@ -1,0 +1,308 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title"></ui:define>
+
+    <ui:define name="content">
+        <h:form id="form">
+            <div class="ui-fluid">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-6">
+                        <p:panel rendered="#{collateralAction.status.equals('0')}" header="草稿">
+                            <p:dataTable id="dt" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                        <p:panel rendered="#{collateralAction.status.equals('1')}" header="待审核押品信息">
+                            <p:dataTable id="dt1" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                        <p:panel rendered="#{collateralAction.status.equals('2')}" header="被退回押品信息">
+                            <p:dataTable id="dt2" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                        <p:panel rendered="#{collateralAction.status.equals('3')}" header="已发布押品信息">
+                            <p:dataTable id="dt3" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                        <p:panel rendered="#{collateralAction.status.equals('4')}" header="待完成押品信息">
+                            <p:dataTable id="dt4" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                        <p:panel rendered="#{collateralAction.status.equals('5')}" header="已完成押品信息">
+                            <p:dataTable id="dt5" var="record" value="#{collateralAction.dataList}" reflow="true" selectionMode="single"
+                                         selection="#{dtSelectionView.selectedCar}" rowKey="#{record.pkid}">
+                                <p:column headerText=" 操作 " style="width:80px;text-align: center; min-width: 70px">
+                                    <p:commandButton icon="ui-icon-pencil"
+                                                     title="编辑"
+                                                     style="height:24px;width:24px"
+                                                     process=":form:dt"
+                                                     action="#{collateralAction.selectRecord(record)}"
+                                                     update=":form">
+                                    </p:commandButton>
+                                    <p:commandButton  icon="ui-icon-trash"
+                                                      title="删除"
+                                                      style="height:24px;width:24px"
+                                                      process=":form:dt"
+                                                      action="#{collateralAction.onDelete(record)}"
+                                                      update=":form" >
+                                    </p:commandButton>
+                                </p:column>
+                                <p:column headerText="所属单位" sortBy="#{record.unit}">
+                                    <h:outputText value="#{record.unit}"/>
+                                </p:column>
+
+                                <p:column headerText="咨询联系人" sortBy="#{record.contact}">
+                                    <h:outputText value="#{record.contact}"/>
+                                </p:column>
+
+                                <p:column headerText="押品可处置属性" sortBy="#{record.dealType}">
+                                    <h:outputText value="#{record.dealType}"/>
+                                </p:column>
+
+                                <p:column headerText="押品资产类别" sortBy="#{record.assetType}">
+                                    <h:outputText value="#{record.assetType}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <p:panel header="押品信息">
+                            <p:panelGrid columns="2"
+                                         columnClasses="ui-grid-col-3,ui-grid-col-7"
+                                         layout="grid" styleClass="ui-panelgrid-blank form-group"
+                                         style="border:0px none; background-color:transparent;">
+                                <p:outputLabel for="menu1" value="所属单位"/>
+                                <p:selectOneMenu id="menu1">
+                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItem itemLabel="单位1" itemValue="1"/>
+                                    <f:selectItem itemLabel="单位2" itemValue="2"/>
+                                    <f:selectItem itemLabel="单位3" itemValue="3"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel for="input2" value="咨询联系人"/>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText id="input2" value="#{collateralAction.data.contact}"/>
+                                    <label>咨询联系人</label>
+                                </h:panelGroup>
+                                <p:outputLabel for="input3" value="电话"/>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText id="input3" value="#{collateralAction.data.phone}"/>
+                                    <label>电话</label>
+                                </h:panelGroup>
+                                <p:outputLabel for="input4" value="邮箱"/>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText id="input4" value="#{collateralAction.data.mail}"/>
+                                    <label>邮箱</label>
+                                </h:panelGroup>
+                                <p:outputLabel for="menu2" value="押品可处置属性"/>
+                                <p:selectOneMenu id="menu2" editable="true">
+                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItem itemLabel="抵债资产" itemValue="1"/>
+                                    <f:selectItem itemLabel="法院公开处置资产" itemValue="2"/>
+                                    <f:selectItem itemLabel="银行和抵押人协议处置资产" itemValue="3"/>
+                                </p:selectOneMenu>
+
+                                <p:outputLabel for="menu3" value="押品资产类别"/>
+                                <p:selectOneMenu id="menu3" value="#{infoPubAction.assetType}">
+                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItem itemLabel="土地" itemValue="1"/>
+                                    <f:selectItem itemLabel="厂房" itemValue="2"/>
+                                    <f:selectItem itemLabel="商业用房" itemValue="3"/>
+                                    <f:selectItem itemLabel="住房" itemValue="4"/>
+                                    <f:selectItem itemLabel="机器设备" itemValue="5"/>
+                                    <f:selectItem itemLabel="交通运输工具" itemValue="6"/>
+                                    <f:selectItem itemLabel="股权" itemValue="7"/>
+                                    <f:selectItem itemLabel="依法可抵质押的其他资产" itemValue="8"/>
+                                    <p:ajax
+                                            update="form"/>
+                                </p:selectOneMenu>
+
+                                <p:outputLabel value="买受人资质要求"/>
+                                <p:outputLabel
+                                        value="根据《金融资产管理公司资产处置管理办法（修订）》（财金[2008]85号），“资产公司不得向下列人员转让不良资产：国家公务员、金融监管机构工作人员、政法干警、资产公司工作人员、国有企业债务人管理层以及参与资产处置工作的律师、会计师、评估师等中介机构人员等关联人。"/>
+
+                            </p:panelGrid>
+                        </p:panel>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:panel header="押品资产类别">
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('1')}">
+                                <ui:include src="infoPubLand.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('2')}">
+                                <ui:include src="infoPubFactoryBuilding.xhtml"/>
+                            </p:panel>
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('3')}">
+                                <ui:include src="infoPubBusinessBuilding.xhtml"/>
+                            </p:panel>
+                        </p:panel>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -14,8 +14,10 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by baiqg on 2016/10/20.
@@ -38,6 +40,7 @@ public class CollateralAction {
     private List<SelectItem> cityMenu;      // 区域位置-市
     private List<SelectItem> areaMenu;      // 区域位置-区
     private List<SelectItem> yesOrNoMenu;   // 是否
+    private String status;                  // 押品信息状态
 
     @PostConstruct
     public void init() {
@@ -52,6 +55,8 @@ public class CollateralAction {
         land.setCity("1");                           // 青岛市
         land.setArea("0");                           // 市南区
         yesOrNoMenu = EnumUtil.getEnuYesOrNoMenu();
+        Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        status = params.get("status");
     }
 
     /**
@@ -60,7 +65,7 @@ public class CollateralAction {
     public void draftAdd() {
         collateralAdd.setPkid(ToolUtil.getDateTimeMsec());
         collateralAdd.setStatus(EnuCollateralStatus.STATUS_0.getCode());
-        if(EnuAssetType.TYPE_0.getCode().equals(collateralAdd.getAssetType())) {
+        if (EnuAssetType.TYPE_0.getCode().equals(collateralAdd.getAssetType())) { // 土地
             land.setPkid(ToolUtil.getDateTimeMsec());
             land.setAssetType(collateralAdd.getAssetType());
             collateralAdd.setAssetPkid(land.getPkid());
@@ -68,6 +73,31 @@ public class CollateralAction {
         }
         dbRepo.addCollateral(collateralAdd);
         MessageUtil.addInfo("保存草稿成功！");
+    }
+
+    /**
+     * 确认发布
+     */
+    public void infoPub() {
+        collateralAdd.setPkid(ToolUtil.getDateTimeMsec());
+        collateralAdd.setStatus(EnuCollateralStatus.STATUS_1.getCode());
+        if (EnuAssetType.TYPE_0.getCode().equals(collateralAdd.getAssetType())) { // 土地
+            land.setPkid(ToolUtil.getDateTimeMsec());
+            land.setAssetType(collateralAdd.getAssetType());
+            collateralAdd.setAssetPkid(land.getPkid());
+            dbRepo.addLand(land);
+        }
+        dbRepo.addCollateral(collateralAdd);
+        MessageUtil.addInfo("信息发布成功！");
+    }
+
+    /**
+     * 设置打开页面的状态
+     *
+     * @param status
+     */
+    public String open(String status) {
+        return "/ui/admin/info.xhtml?faces-redirect=true&status=" + status;
     }
 
     public void selectRecord(Collateral collateral) {
@@ -181,5 +211,13 @@ public class CollateralAction {
 
     public void setYesOrNoMenu(List<SelectItem> yesOrNoMenu) {
         this.yesOrNoMenu = yesOrNoMenu;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

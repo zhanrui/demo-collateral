@@ -110,9 +110,9 @@
 
     <p:panelGrid columns="4"  layout="grid"
                  styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
-        <p:commandButton value="确认发布" icon="ui-icon-launch" type="button"/>
-        <p:commandButton type="button" value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
-                         action="#{collateralAction.draftAdd()}" update="form,form:msgs"/>
+        <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPub}"/>
+        <p:commandButton value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
+                         action="#{collateralAction.draftAdd}" update="form,form:msgs"/>
     </p:panelGrid>
 
 </ui:composition>

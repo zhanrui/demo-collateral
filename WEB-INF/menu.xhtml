@@ -52,24 +52,16 @@
                         <p:menuitem id="um_dashboard" value="工作台" icon="&#xE871;" outcome="/dashboard"/>
                         <p:submenu id="um_components" label="发布管理" icon="&#xE896;">
                             <p:menuitem id="um_sample" value="信息发布" icon="&#xE30B;" outcome="/ui/admin/infoPub.xhtml"/>
-                            <p:menuitem id="um_forms" value="草稿箱" icon="&#xE890;" outcome="/ui/admin/draft.xhtml"/>
-                            <p:menuitem id="um_data" value="发票校验" icon="&#xE3EC;" outcome="/app1"/>
-                            <p:menuitem id="um_panels" value="报表管理" icon="&#xE14F;" outcome="/app1"/>
-                            <p:menuitem id="um_overlays" value="客户信息维护" icon="&#xE14D;" outcome="/app1"/>
-                        </p:submenu>
-                        <p:submenu id="um_applyforfinance" label="融资申请" icon="&#xE884;">
-                            <p:menuitem id="um_db_landing1" value="融资申请方式一" icon="&#xE904;" outcome="/app1"/>
-                            <p:menuitem id="um_empty1" value="融资申请方式二" icon="&#xE88B;" outcome="/app1"/>
-                            <p:menuitem id="um_login1" value="融资申请方式三" icon="&#xE8E8;" outcome="/app1"/>
+                            <p:menuitem id="um_forms" value="草稿箱" icon="&#xE890;" action="#{collateralAction.open('0')}"/>
+                            <p:menuitem id="um_data" value="被退回押品信息" icon="&#xE3EC;" action="#{collateralAction.open('2')}"/>
                         </p:submenu>
                         <p:submenu id="um_infochk" label="信息审查" icon="fa fa-check">
-                            <p:menuitem id="um_infochk1" value="信息审查处理" icon="&#xE896;" outcome="/app1"/>
-                            <p:menuitem id="um_infochk2" value="信息审查上报" icon="&#xE904;" outcome="/app1"/>
+                            <p:menuitem id="um_infochk1" value="待审核信息" icon="&#xE896;" action="#{collateralAction.open('1')}"/>
+                            <p:menuitem id="um_infochk2" value="待完成信息" icon="&#xE904;" action="#{collateralAction.open('4')}"/>
                         </p:submenu>
-                        <p:submenu id="um_default" label="融资申请审核" icon="&#xE8E8;">
-                            <p:menuitem id="um_db_landing" value="融资申请资料查询" icon="&#xE904;" outcome="/landing"/>
-                            <p:menuitem id="um_empty" value="融资申请资料审查" icon="&#xE88B;" outcome="/empty"/>
-                            <p:menuitem id="um_login" value="融资申请资料归档" icon="&#xE8E8;" outcome="/login"/>
+                        <p:submenu id="um_default" label="已发布管理" icon="&#xE8E8;">
+                            <p:menuitem id="um_db_landing" value="已发布押品信息" icon="&#xE904;" action="#{collateralAction.open('3')}"/>
+                            <p:menuitem id="um_login" value="已完成押品信息" icon="&#xE8E8;" action="#{collateralAction.open('5')}"/>
                         </p:submenu>
                         <p:submenu id="um_system" label="系统管理" icon="&#xE5D2;">
                             <p:menuitem id="um_system1" value="企业用户管理" icon="&#xE896;" outcome="/app1"/>
