@@ -158,9 +158,36 @@
                      styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
             <p:commandButton value="保存修改" icon="ui-icon-launch" action="#{collateralAction.infoUpdateRecheck}"
                              update="form,form:msgs"/>
-            <p:commandButton value="已成交" icon="ui-icon-launch" action="#{collateralAction.bargain}"
-                             update="form,form:msgs"/>
+            <p:commandButton value="已成交" icon="ui-icon-launch"
+                             type="button" onclick="PF('info').show();" />
         </p:panelGrid>
+
+        <p:dialog id="infoDialog" header="成交信息" widgetVar="info"
+                  resizable="false" modal="true" focus="bargainMoney"
+                  showEffect="clip" hideEffect="fold">
+            <p:panelGrid columns="2"
+                         columnClasses="ui-grid-col-4,ui-grid-col-6"
+                         layout="grid" styleClass="ui-panelgrid-blank form-group"
+                         style="border:0px none; background-color:transparent;">
+                <p:outputLabel for="bargainDate" value="成交日期"/>
+                <p:calendar id="bargainDate"/>
+                <p:outputLabel for="bargainMoney" value="成交金额"/>
+                <h:panelGroup styleClass="md-inputfield">
+                    <p:inputText id="bargainMoney"/>
+                    <label>成交金额</label>
+                </h:panelGroup>
+            </p:panelGrid>
+            <p:panelGrid columns="2"
+                         columnClasses="ui-grid-col-6,ui-grid-col-6"
+                         layout="grid" styleClass="ui-panelgrid-blank form-group"
+                         style="border:0px none; background-color:transparent;">
+                <p:commandButton value="确定" icon="ui-icon-check" ajax="false"
+                                 action="#{collateralAction.bargain}" update="form,form:msgs"
+                                 oncomplete="PF('info').hide()"/>
+                <p:commandButton value="取消" icon="ui-icon-close"
+                                 oncomplete="PF('info').hide()"/>
+            </p:panelGrid>
+        </p:dialog>
     </p:panel>
 
     <p:panel style="border:none;" rendered="#{collateralAction.status.equals('4')}">
