@@ -17,8 +17,8 @@ public class StatisticsView implements Serializable {
     
     private List<Car> cars;
     
-    @ManagedProperty("#{carService}")
-    private CarService service;
+    @ManagedProperty("#{statisticsService}")
+    private StatisticsService service;
 
     @PostConstruct
     public void init() {
@@ -29,7 +29,7 @@ public class StatisticsView implements Serializable {
         return cars;
     }
 
-    public void setService(CarService service) {
+    public void setService(StatisticsService service) {
         this.service = service;
     }
 }
