@@ -137,15 +137,9 @@
                                 <p:column headerText=" 操作 ">
                                     <p:commandButton icon="ui-icon-pencil"
                                                      title="编辑"
-                                                     process=":form:dt"
+                                                     process=":form:dt4"
                                                      action="#{collateralAction.selectRecord(record)}"
                                                      update=":form">
-                                    </p:commandButton>
-                                    <p:commandButton  icon="ui-icon-trash"
-                                                      title="删除"
-                                                      process=":form:dt"
-                                                      action="#{collateralAction.onDelete(record)}"
-                                                      update=":form" >
                                     </p:commandButton>
                                 </p:column>
                                 <p:column headerText="所属单位" sortBy="#{record.unit}">
@@ -171,15 +165,9 @@
                                 <p:column headerText=" 操作 ">
                                     <p:commandButton icon="ui-icon-pencil"
                                                      title="编辑"
-                                                     process=":form:dt"
+                                                     process=":form:dt5"
                                                      action="#{collateralAction.selectRecord(record)}"
                                                      update=":form">
-                                    </p:commandButton>
-                                    <p:commandButton  icon="ui-icon-trash"
-                                                      title="删除"
-                                                      process=":form:dt"
-                                                      action="#{collateralAction.onDelete(record)}"
-                                                      update=":form" >
                                     </p:commandButton>
                                 </p:column>
                                 <p:column headerText="所属单位" sortBy="#{record.unit}">

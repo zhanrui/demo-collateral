@@ -128,6 +128,22 @@ public class CollateralAction {
     }
 
     /**
+     * 保存修改-重新审核
+     */
+    public void infoUpdateRecheck() {
+        data.setStatus(EnuCollateralStatus.STATUS_1.getCode());
+        dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
+        MessageUtil.addInfo("信息修改成功！");
+    }
+
+    /**
      * 审核通过
      */
     public void checkYes() {
@@ -157,6 +173,38 @@ public class CollateralAction {
             }
         }
         MessageUtil.addInfo("退回成功！");
+    }
+
+    /**
+     * 已成交
+     */
+    public void bargain() {
+        data.setStatus(EnuCollateralStatus.STATUS_4.getCode());
+        dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
+        MessageUtil.addInfo("成交成功！");
+    }
+
+    /**
+     * 审核通过-已完成
+     */
+    public void infoComplete() {
+        data.setStatus(EnuCollateralStatus.STATUS_5.getCode());
+        dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
+        MessageUtil.addInfo("审核成功！");
     }
 
     /**

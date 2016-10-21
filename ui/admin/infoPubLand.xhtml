@@ -145,10 +145,29 @@
     </p:panel>
 
     <p:panel style="border:none;" rendered="#{collateralAction.status.equals('2')}">
-        <p:panelGrid columns="4" layout="grid"
+        <p:panelGrid columns="2" layout="grid"
                      styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
 
             <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPubByDraft}"
+                             update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
+
+    <p:panel style="border:none;" rendered="#{collateralAction.status.equals('3')}">
+        <p:panelGrid columns="4" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+            <p:commandButton value="保存修改" icon="ui-icon-launch" action="#{collateralAction.infoUpdateRecheck}"
+                             update="form,form:msgs"/>
+            <p:commandButton value="已成交" icon="ui-icon-launch" action="#{collateralAction.bargain}"
+                             update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
+
+    <p:panel style="border:none;" rendered="#{collateralAction.status.equals('4')}">
+        <p:panelGrid columns="2" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+
+            <p:commandButton value="审核通过" icon="ui-icon-launch" action="#{collateralAction.infoComplete}"
                              update="form,form:msgs"/>
         </p:panelGrid>
     </p:panel>
