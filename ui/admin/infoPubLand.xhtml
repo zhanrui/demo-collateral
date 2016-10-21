@@ -13,7 +13,7 @@
             <label>题目</label>
         </h:panelGroup>
         <p:outputLabel for="land_menu1" value="土地类型"/>
-        <p:selectOneMenu id="land_menu1">
+        <p:selectOneMenu id="land_menu1"  value="#{collateralAction.land.landType}">
             <f:selectItems value="#{collateralAction.landTypeMenu}"/>
         </p:selectOneMenu>
         <p:outputLabel for="land_pg1" value="区域位置"/>
@@ -98,7 +98,7 @@
 
         <p:outputLabel for="land_input11" value="押品现状描述"/>
         <h:panelGroup styleClass="md-inputfield">
-            <p:inputTextarea id="land_input11"/>
+            <p:inputTextarea id="land_input11" value="#{collateralAction.land.presentDescription}"/>
             <label>押品现状描述</label>
         </h:panelGroup>
         <p:outputLabel for="land_radio3" value="是否重点推荐"/>
@@ -110,7 +110,8 @@
 
     <p:panelGrid columns="4"  layout="grid"
                  styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
-        <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPub}"/>
+        <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPub}"
+                         update="form,form:msgs"/>
         <p:commandButton value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
                          action="#{collateralAction.draftAdd}" update="form,form:msgs"/>
     </p:panelGrid>

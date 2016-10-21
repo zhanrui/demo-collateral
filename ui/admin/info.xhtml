@@ -9,6 +9,7 @@
 
     <ui:define name="content">
         <h:form id="form">
+            <p:messages id="msgs" showDetail="false" life="1500"/>
             <div class="ui-fluid">
                 <div class="ui-g">
                     <div class="ui-g-12 ui-md-6">
@@ -236,11 +237,8 @@
                                          layout="grid" styleClass="ui-panelgrid-blank form-group"
                                          style="border:0px none; background-color:transparent;">
                                 <p:outputLabel for="menu1" value="所属单位"/>
-                                <p:selectOneMenu id="menu1">
-                                    <f:selectItem itemLabel="" itemValue=""/>
-                                    <f:selectItem itemLabel="单位1" itemValue="1"/>
-                                    <f:selectItem itemLabel="单位2" itemValue="2"/>
-                                    <f:selectItem itemLabel="单位3" itemValue="3"/>
+                                <p:selectOneMenu id="menu1" value="#{collateralAction.data.unit}">
+                                    <f:selectItems value="#{collateralAction.unitMenu}"/>
                                 </p:selectOneMenu>
                                 <p:outputLabel for="input2" value="咨询联系人"/>
                                 <h:panelGroup styleClass="md-inputfield">
@@ -258,7 +256,7 @@
                                     <label>邮箱</label>
                                 </h:panelGroup>
                                 <p:outputLabel for="menu2" value="押品可处置属性"/>
-                                <p:selectOneMenu id="menu2" editable="true">
+                                <p:selectOneMenu id="menu2" editable="true" value="#{collateralAction.data.dealType}">
                                     <f:selectItem itemLabel="" itemValue=""/>
                                     <f:selectItem itemLabel="抵债资产" itemValue="1"/>
                                     <f:selectItem itemLabel="法院公开处置资产" itemValue="2"/>
@@ -266,18 +264,9 @@
                                 </p:selectOneMenu>
 
                                 <p:outputLabel for="menu3" value="押品资产类别"/>
-                                <p:selectOneMenu id="menu3" value="#{infoPubAction.assetType}">
-                                    <f:selectItem itemLabel="" itemValue=""/>
-                                    <f:selectItem itemLabel="土地" itemValue="1"/>
-                                    <f:selectItem itemLabel="厂房" itemValue="2"/>
-                                    <f:selectItem itemLabel="商业用房" itemValue="3"/>
-                                    <f:selectItem itemLabel="住房" itemValue="4"/>
-                                    <f:selectItem itemLabel="机器设备" itemValue="5"/>
-                                    <f:selectItem itemLabel="交通运输工具" itemValue="6"/>
-                                    <f:selectItem itemLabel="股权" itemValue="7"/>
-                                    <f:selectItem itemLabel="依法可抵质押的其他资产" itemValue="8"/>
-                                    <p:ajax
-                                            update="form"/>
+                                <p:selectOneMenu id="menu3" value="#{collateralAction.data.assetType}">
+                                    <f:selectItems value="#{collateralAction.assetTypeMenu}"/>
+                                    <p:ajax update="form"/>
                                 </p:selectOneMenu>
 
                                 <p:outputLabel value="买受人资质要求"/>
@@ -289,13 +278,13 @@
                     </div>
                     <div class="ui-g-12">
                         <p:panel header="押品资产类别">
-                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('1')}">
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('0')}">
                                 <ui:include src="infoPubLand.xhtml"/>
                             </p:panel>
-                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('2')}">
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('1')}">
                                 <ui:include src="infoPubFactoryBuilding.xhtml"/>
                             </p:panel>
-                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('3')}">
+                            <p:panel style="border:none;" rendered="#{collateralAction.data.assetType.equals('2')}">
                                 <ui:include src="infoPubBusinessBuilding.xhtml"/>
                             </p:panel>
                         </p:panel>
