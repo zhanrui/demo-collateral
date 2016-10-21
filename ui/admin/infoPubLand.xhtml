@@ -110,7 +110,7 @@
 
     </p:panelGrid>
 
-    <p:panel style="border:none;" rendered="#{empty collateralAction.status or collateralAction.status.equals('0')}">
+    <p:panel style="border:none;" rendered="#{empty collateralAction.status}">
         <p:panelGrid columns="4" layout="grid"
                      styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
 
@@ -121,14 +121,34 @@
         </p:panelGrid>
     </p:panel>
 
+    <p:panel style="border:none;" rendered="#{collateralAction.status.equals('0')}">
+        <p:panelGrid columns="4" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+
+            <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPubByDraft}"
+                             update="form,form:msgs"/>
+            <p:commandButton value="保存草稿" icon="ui-icon-add" styleClass="orange-btn"
+                             action="#{collateralAction.infoUpdate}" update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
+
     <p:panel style="border:none;" rendered="#{collateralAction.status.equals('1')}">
         <p:panelGrid columns="3" layout="grid"
                      styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
             <p:commandButton value="保存修改" icon="ui-icon-launch" action="#{collateralAction.infoUpdate}"
                              update="form,form:msgs"/>
-            <p:commandButton value="审核通过" icon="ui-icon-launch" action="#{collateralAction.infoUpdate}"
+            <p:commandButton value="审核通过" icon="ui-icon-launch" action="#{collateralAction.checkYes}"
                              update="form,form:msgs"/>
-            <p:commandButton value="退回重发" icon="ui-icon-launch" styleClass="orange-btn" action="#{collateralAction.infoUpdate}"
+            <p:commandButton value="退回重发" icon="ui-icon-launch" styleClass="orange-btn" action="#{collateralAction.checkNo}"
+                             update="form,form:msgs"/>
+        </p:panelGrid>
+    </p:panel>
+
+    <p:panel style="border:none;" rendered="#{collateralAction.status.equals('2')}">
+        <p:panelGrid columns="4" layout="grid"
+                     styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+
+            <p:commandButton value="确认发布" icon="ui-icon-launch" action="#{collateralAction.infoPubByDraft}"
                              update="form,form:msgs"/>
         </p:panelGrid>
     </p:panel>

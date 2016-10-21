@@ -103,6 +103,22 @@ public class CollateralAction {
     }
 
     /**
+     * 确认发布草稿
+     */
+    public void infoPubByDraft() {
+        data.setStatus(EnuCollateralStatus.STATUS_1.getCode());
+        dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
+        MessageUtil.addInfo("信息发布成功！");
+    }
+
+    /**
      * 保存修改
      */
     public void infoUpdate() {
@@ -117,6 +133,13 @@ public class CollateralAction {
     public void checkYes() {
         data.setStatus(EnuCollateralStatus.STATUS_3.getCode());
         dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
         MessageUtil.addInfo("审核成功！");
     }
 
@@ -126,6 +149,13 @@ public class CollateralAction {
     public void checkNo() {
         data.setStatus(EnuCollateralStatus.STATUS_2.getCode());
         dbRepo.updCollateral(data);
+        dataList = new ArrayList<Collateral>();
+        data = null;
+        for (Collateral record : dbRepo.getCollateralList()) {
+            if (record.getStatus().equals(status)) {
+                dataList.add(record);
+            }
+        }
         MessageUtil.addInfo("退回成功！");
     }
 
